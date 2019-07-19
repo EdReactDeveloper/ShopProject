@@ -1,0 +1,29 @@
+.counter {
+
+  &__wrapper {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn,
+  &__display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

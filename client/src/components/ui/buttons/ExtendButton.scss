@@ -1,0 +1,30 @@
+@import '../../../Variables.scss'; 
+
+.extendbutton {
+  background: #fff;
+  height: 6rem;
+  margin: 8rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  @media screen and(max-width: 450px) {
+      margin: 3rem auto;
+  }
+
+  div {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: $color-primary;
+      margin: 0 .2rem;
+
+  }
+
+}

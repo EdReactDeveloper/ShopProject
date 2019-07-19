@@ -1,0 +1,15 @@
+@import '../../../../Variables.scss'; 
+
+.payment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__heading{
+      font-size: 1.6rem; 
+      color: $color-primary; 
+      margin-bottom: 2rem;
+  }
+  @media only screen and (max-width: 450px) {
+      align-items: center;       
+   }
+}

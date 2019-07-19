@@ -1,0 +1,36 @@
+@import '../../../../Variables.scss';
+
+.navigation {
+   
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 8rem;
+        margin-right: auto;
+        width: 38rem;
+        @media (max-width: 900px){
+            width: 100%;
+            justify-content: space-around;
+        }
+        @media only screen and(max-width: 450px){
+            display: none;
+        }
+    }
+
+    &-item {
+        font-weight: 700;
+      
+    }
+
+    &-link:link,
+    &-link:visited {
+        font-size: 1.4rem;  
+        @media (max-width: 900px){
+            font-size: 2rem;
+        }
+    }
+}
+
+.my-active{
+    color: $color-primary
+}

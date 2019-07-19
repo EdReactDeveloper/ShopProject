@@ -1,0 +1,181 @@
+@import '../../../../Variables.scss'; 
+
+.sales {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__product {
+
+    &-icon {
+      height: 2rem;
+      width: 2rem;
+
+      & path {
+        fill: $color-primary
+      }
+
+      &-cart {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+
+        & path {
+          fill: $color-primary;
+        }
+      }
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      width: 100%;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: 40rem;
+        justify-content: center;
+        grid-row-gap: 1rem;
+      }
+    }
+
+    &-item {
+      transition: all .5s;
+      width: 100%;
+      &-stars{
+        display: flex;
+      }
+      &:hover &-stats-front {
+        visibility: hidden;
+      }
+
+      &:hover &-stats-back {
+        visibility: visible;
+      }
+
+      &:hover {
+        box-shadow: 1px 0 3px rgba(0, 0, 0, .1)
+      }
+
+      @media only screen and (max-width: 1200px) {
+        margin: 2rem auto;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        margin: 0 auto;
+      }
+
+      @media only screen and (max-width: 768px) {
+        width: 35rem;
+
+      }
+
+      @media only screen and (max-width: 450px) {
+        margin-top: 2rem;
+        width: 30rem;
+      }
+
+
+      &-front {
+        display: flex;
+        padding: 3.5rem 3rem;
+        box-sizing: border-box;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        font-family: 'HarmoniaSansProCyr';
+      
+
+        @media only screen and (max-width: 1200px) {
+          padding: 1rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+          flex-direction: column;
+        }
+
+        @media only screen and (max-width: 768px) {
+          flex-direction: row;
+          width: 100%;
+          margin: 1rem auto;
+        }
+
+        @media only screen and (max-width: 400px) {
+          flex-direction: column;
+        }
+      }
+
+      &-img {
+        height: 9rem;
+
+      }
+
+      &-line {
+        height: 6rem;
+        width: 1px;
+        background: #ccc;
+
+        @media only screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+          display: block;
+        }
+
+        @media only screen and (max-width: 400px) {
+          display: none;
+        }
+      }
+
+      &-infobox {
+        position: relative;
+        width: 50%;
+        height: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &-stats {
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $color-primary;
+
+        &-back {
+          position: absolute;
+          top: 5.5rem;
+          visibility: hidden;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          color: $color-primary;
+        }
+
+        &-front {
+          position: absolute;
+          top: 5.5rem;
+          display: flex;
+          opacity: 1;
+          visibility: visible;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        &-hover {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

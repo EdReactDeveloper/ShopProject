@@ -1,0 +1,24 @@
+.orders {
+
+  &__order_list {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    margin: 2rem 0;
+
+  }
+
+  &__order_item {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+
+    &-color {
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

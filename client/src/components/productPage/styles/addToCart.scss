@@ -1,0 +1,17 @@
+.toCart{
+  &__btn{
+    margin-left: 16rem;
+    font-size: 1.4rem;
+    height: 5rem;
+    width: 10rem;
+    color: #fff;
+    background: #ff5912;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s;
+  }
+}

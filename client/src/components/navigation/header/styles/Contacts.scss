@@ -1,0 +1,68 @@
+@import '../../../../Variables.scss'; 
+
+.contacts {
+  height: 100%;
+
+  @media(max-width: 53rem) {
+    height: auto;
+  }
+
+  &__left-icons {
+    margin-right: 1rem;
+
+    & path {
+      fill: $color-primary;
+    }
+  }
+
+  &__right-icons {
+    margin-left: 2rem;
+    cursor: pointer;
+
+    & path {
+      fill: #666;
+    }
+  }
+
+
+  &-wrapper {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    @media(max-width: 53rem) {
+      flex-direction: column;
+
+      &>* {
+        margin: 1.5rem auto;
+      }
+    }
+  }
+
+
+  &-left {
+    display: flex;
+
+    &-mail {
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &-phone {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  height: 6rem;
+  border-bottom: 1px solid #ccc;
+
+  &-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
