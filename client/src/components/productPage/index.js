@@ -27,12 +27,6 @@ const ProductPage = ({ getCart, products: { product, loading }, findProductById,
 			) : (
 				<div>loading...</div>
 			)}
-			<div className="related">
-				<div className="container">
-					<Heading main="products" span="related" />
-					<NewsLetter />
-				</div>
-			</div>
 		</div>
 	);
 };

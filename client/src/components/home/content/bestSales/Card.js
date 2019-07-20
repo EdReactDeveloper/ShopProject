@@ -9,7 +9,7 @@ const SalesCard = ({item}) => {
  
     return (
         <li className="sales__product-item">
-                <Link to="/" className="sales__product-item-front">
+                <Link to={`/products/${item._id}`} className="sales__product-item-front">
                   <img
                     src={item.images[0]}
                     alt="is missing"

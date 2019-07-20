@@ -10,7 +10,6 @@ const ImageComponent = ({images}) => {
 
   const {image, index} = imageData; 
 
-
   useEffect(()=>{
     setImage({image: images[0], index: 0})
   }, [images])
