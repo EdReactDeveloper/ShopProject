@@ -27,7 +27,7 @@ const banner = () => {
             <div className="banner-pricebox">
               <div className="banner-price">Price: $120</div>
               <div className="banner-order">
-                <Icon d={NavIcon.busket} className="banner-icon" />
+                <Icon d={NavIcon.basket} className="banner-icon" />
                 <p className="banner-order-text">Order Now</p>
               </div>
             </div>

@@ -8,7 +8,6 @@ const Orders = ({getOrders, orders: {orders, loading}}) => {
 useEffect(()=>{
   getOrders()
 }, [getOrders] )
-  console.log(orders)
   return (
     <div className="orders__wrapper container">
       {orders && !loading ? orders.reverse().map(item=>(

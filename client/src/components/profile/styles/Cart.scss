@@ -6,6 +6,14 @@
     flex-direction: column;
   }
 
+  &__empty{
+    padding: 2rem; 
+    margin: 1rem 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
   &__item {
     display: grid;
     grid-template-columns: repeat(7, 1fr);

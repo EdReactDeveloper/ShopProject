@@ -15,15 +15,13 @@ export const getUser = () => async dispatch => {
   }
 }
 
-export const register = (email, password) => async dispatch => {
-	const config = { headers: { 'Context-Type': 'application/json' } };
-	const body = JSON.stringify({ email, password });
+export const register = (email, password, history) => async dispatch => {
+  const config = { headers: { 'Content-Type': 'application/json' } }
+  const body = JSON.stringify({email, password});
+  console.log(body)
 	try {
-		const res = await axios.post('/api/users/register', body, config);
-		dispatch({
-			type: AUTH_SUCCESS,
-			payload: res.data
-		});
+		await axios.post('/api/users/register', body, config);
+    history.push('/login')    
 	} catch (error) {
     dispatch({
       type: AUTH_FAIL
@@ -31,7 +29,7 @@ export const register = (email, password) => async dispatch => {
   }
 };
 
-export const login = (email, password) => async dispatch => {
+export const login = (email, password, history) => async dispatch => {
   const config = {headers: { 'Content-Type': 'application/json'}}
   const body = JSON.stringify({email, password})
   try {
@@ -40,6 +38,7 @@ export const login = (email, password) => async dispatch => {
       type: AUTH_SUCCESS, 
       payload: res.data
     })
+    history.push('/')
   } catch (error) {
     dispatch({
       type: AUTH_FAIL

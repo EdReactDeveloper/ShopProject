@@ -1,9 +1,33 @@
+@import '../../../../Variables.scss';
+
 .toolbar{
   &__list{
     display: flex;
+    align-items: center;
   }
   &__item{
+    display: flex;
+    align-items: center;
     margin-left: 1rem;
+    transition: all .3s; 
+    &:hover{
+      color: $color-primary
+    }
+
+    &-icon{
+      height: 2.5rem;
+      width: 2.5rem;
+      margin-top: 1rem;
+      & path{
+        fill: #666
+      }  
+      transition: all 0.5s;
+      &:hover{
+        & path{
+          fill: $color-primary
+        }
+      }
+    }
   }
 
 }

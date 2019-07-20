@@ -16,15 +16,19 @@ router.get('/', async(req, res, next) =>{
 
 router.post(
 	'/register',
-	[check('email', 'email is required').isEmail(), check('password', 'password is required').isLength({ min: 6 })],
+	// [
+	// 	check('email', 'please enter a valid email').isEmail(),
+	// 	check('password', 'you password should be at least 6 characters').isLength({ min: 6 })
+	// ],
 	async (req, res, next) => {
-		const errors = validationResult(req);
-		if (!errors.isEmpty()) {
-			return res.status(400).json({ errors: errors.array() });
-		}
+		// const errors = validationResult(req);
+		// if (!errors.isEmpty()) {
+		// 	console.log(errors)
+		// 	return res.status(400).json({ errors: errors.array() });
+		// }
+		console.log(req.body)
 
 		const { password, email } = req.body;
-
 		try {
 			let user = await User.findOne({ email });
 			if (user) {
@@ -38,6 +42,7 @@ router.post(
 			const salt = await bcrypt.genSalt(10);
 			user.password = await bcrypt.hash(password, salt);
 			await user.save();
+			res.json(user)
 		} catch (error) {
 			res.status(400).json({ msg: error });
 		}

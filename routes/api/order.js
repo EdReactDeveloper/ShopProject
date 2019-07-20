@@ -33,7 +33,8 @@ router.post('/post', async (req, res, next) => {
 		},
 		products: products
 	});
-  await order.save();
+	await order.save();
+	req.user.cartClear()
   return res.json(order)
 });
 

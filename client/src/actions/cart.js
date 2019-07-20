@@ -102,6 +102,7 @@ export const getOrders = () => async dispatch =>{
 			type: GET_ORDERS_SUCCESS, 
 			payload: res.data
 		})
+		return res.data
 	} catch (error) {
 		dispatch({
 			type: GET_ORDERS_FAIL

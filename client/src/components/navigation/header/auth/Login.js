@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {login} from '../../../actions/auth'; 
+import {login} from '../../../../actions/auth'; 
 import {connect} from 'react-redux'
-import './styles/Auth.scss'; 
+import '../styles/Auth.scss'; 
 
-const Auth = ({login}) => {
+const Login = ({login, history}) => {
 	const [formData, setFormData] = useState({
 		password: '',
 		email: ''
@@ -18,7 +18,7 @@ const Auth = ({login}) => {
 	const onSubmit = async(e) => {
     e.preventDefault()
     if(email && password){
-      login(email, password)
+      login(email, password, history)
     }
   };
 	return (
@@ -34,4 +34,4 @@ const Auth = ({login}) => {
 	);
 };
 
-export default connect(null, {login})(Auth);
+export default connect(null, {login})(Login);

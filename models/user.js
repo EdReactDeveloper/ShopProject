@@ -51,4 +51,9 @@ User.methods.removeFromCart = function(id) {
 	this.cart.items = updatedCart;
 	return this.save();
 };
+
+User.methods.cartClear = function(){
+	this.cart = {item: []}
+	this.save()
+}
 module.exports = mongoose.model('User', User);

@@ -14,7 +14,6 @@ const ToCartBtn = ({ addToCart, getCart, product, cart: { cart, color, size } })
 	useEffect(
 		() => {
 			setInCart({ isInCart: inCart(product, cart) });
-			console.log(cart)
 		},
 		[cart, product, isInCart, getCart]
 	);
