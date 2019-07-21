@@ -4,6 +4,14 @@
   &__list{
     display: flex;
     align-items: center;
+    @media (max-width: 900px) {
+      width: 50%;
+      justify-content: space-around;
+    }
+    @media (max-width: 900px) {
+      width: 90%;
+
+    }
   }
   &__item{
     display: flex;
