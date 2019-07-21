@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import { getCart, sendOrder } from '../../../actions/cart';
 import '../styles/Cart.scss';
 import CartEmpty from './CartEmpty';
 import Cart from './Cart';
 
-const CartContainer = ({ cart: { cart, loading }, sendOrder, history }) => {
+const CartContainer = ({ cart: { cart, loading }, getCart, sendOrder, history }) => {
+
+  useEffect(()=>{
+    getCart()
+  }, [getCart])
+
+  if(loading){
+    return <div>loading...</div>
+  }
 
   if(cart.length > 0){
     return <Cart cart={cart} loading={loading} sendOrder={sendOrder} history={history} />

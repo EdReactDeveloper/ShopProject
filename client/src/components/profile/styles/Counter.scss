@@ -2,23 +2,31 @@
 
   &__wrapper {
     display: flex;
-    width: 70%;
-    margin: 0 auto;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__btn,
-  &__display {
-    display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    background: #ffffff;
+  }
+
+  &__btn {
+    width: 3.5rem;
+    height: 3.5rem;
     border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  &__display {
+    padding: 1rem;
+    color: #ff5912;
+    font-weight: 700;
+    margin: 0 1rem;
+    width: 2rem;
     text-align: center;
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    grid-row: 4/5;
+    grid-column: 3/4;
   }
 }
 

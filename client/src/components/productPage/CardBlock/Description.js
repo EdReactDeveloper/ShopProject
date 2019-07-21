@@ -16,7 +16,7 @@ const productDescription = ({ product, auth: { isAuthenticated, loading }, cart 
 					<Colors colors={colors} />
 					<Sizes sizes={sizes} />
 				</div>
-				<div className="productPage__right-options--right" />
+			
 			</div>
 
 			<div className="productPage__right-order--wrapper">

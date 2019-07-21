@@ -5,7 +5,7 @@ import { counter } from '../../../actions/cart';
 const Total = ({ index, cart }) => {
   const total = cart[index].total
 
-	return <div className="cart__item_price">total: ${total}</div>;
+	return <div className="cart__item_price">${total}</div>;
 };
 
 const mapStateToProps = state => ({
