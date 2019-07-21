@@ -1,32 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const User = require('../../models/user');
 const bcrypt = require('bcryptjs');
 
-
-router.get('/', async(req, res, next) =>{
-  try {
-    let user = await User.findById(req.session.user._id).select('-password')
-    res.json(user)
-  } catch (error) {
-			res.status(400).json({ msg: error });    
-  }
-})
+router.get('/', async (req, res, next) => {
+	try {
+		let user = await User.findById(req.session.user._id).select('-password');
+		res.json(user);
+	} catch (error) {
+		res.status(400).json(error);
+	}
+});
 
 router.post(
 	'/register',
-	// [
-	// 	check('email', 'please enter a valid email').isEmail(),
-	// 	check('password', 'you password should be at least 6 characters').isLength({ min: 6 })
-	// ],
+	[
+		check('email', 'email is required').isEmail(),
+		check('password', 'password should be at least 6 char long').isLength({ min: 6 })
+	],
 	async (req, res, next) => {
-		// const errors = validationResult(req);
-		// if (!errors.isEmpty()) {
-		// 	console.log(errors)
-		// 	return res.status(400).json({ errors: errors.array() });
-		// }
-		console.log(req.body)
+		const errors = validationResult(req);
+		console.log(errors)
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
 
 		const { password, email } = req.body;
 		try {
@@ -42,9 +40,9 @@ router.post(
 			const salt = await bcrypt.genSalt(10);
 			user.password = await bcrypt.hash(password, salt);
 			await user.save();
-			res.json(user)
+			res.json(user);
 		} catch (error) {
-			res.status(400).json({ msg: error });
+			res.status(400).json(error);
 		}
 	}
 );
@@ -58,31 +56,33 @@ router.post(
 	async (req, res, next) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
-			return res.status(400).json({ msg: errors.array() });
+			return res.status(400).json({ errors: errors.array() });
 		}
 		const { email, password } = req.body;
 		try {
 			let user = await User.findOne({ email });
 			if (!user) {
-				return res.status(404).json({ msg: 'the user does not exist' });
+				return res.status(404).json({ errors: [{ msg: 'wrong credentials' }] });
 			}
-			
+
 			const match = await bcrypt.compare(password, user.password);
 			if (!match) {
-				return res.status(400).json({ msg: 'wrong password' });
+				return res.status(400).json({ errors: [{ msg: 'wrong password' }] });
 			}
 			req.session.isLoggedIn = true;
 			req.session.user = user;
 			return req.session.save(err => res.redirect('/'));
 		} catch (error) {
-			res.status(400).json({ msg: error });
-			console.log(error)
+			console.log(error);
+			res.status(400).json(error);
 		}
 	}
 );
 
-router.post('/logout', (req, res, next)=> {
-	req.session.destroy(err=> {res.redirect('/')})
-})
+router.post('/logout', (req, res, next) => {
+	req.session.destroy(err => {
+		res.redirect('/');
+	});
+});
 
 module.exports = router;

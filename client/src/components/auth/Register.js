@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {register} from '../../../../actions/auth'; 
+import {register} from '../../actions/auth'; 
+import {setAlert} from '../../actions/alert'; 
 import {connect} from 'react-redux'
-import '../styles/Auth.scss'; 
+import './Auth.scss'; 
 
-const Register = ({register, history}) => {
+const Register = ({register, setAlert, history}) => {
 	const [formData, setFormData] = useState({
 		password: '',
     email: '', 
@@ -22,7 +23,7 @@ const Register = ({register, history}) => {
 			if(password === password2){
 				register(email, password, history)
 			}else{
-				//alert error
+				setAlert('password and email are required', 'danger')
 			}
     }
   };
@@ -41,4 +42,4 @@ const Register = ({register, history}) => {
 	);
 };
 
-export default connect(null, {register})(Register);
+export default connect(null, {register, setAlert})(Register);

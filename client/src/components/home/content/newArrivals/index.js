@@ -1,6 +1,5 @@
 import React from 'react';
 import Promos from './promos';
-import Button from '../../../ui/buttons/ExtendButton';
 import Heading from '../../../ui/misc/Heading';
 import ProductList from '../../../ui/product/ProductBlock';
 
@@ -16,7 +15,6 @@ const NewArrivals = () => {
 			<div className="content__productbox">
 				<div className="content__product-wrapper">
 					<ProductList className="product-list" />
-					<Button />
 					<Promos />
 				</div>
 			</div>

@@ -1,37 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { getCart, sendOrder } from '../../../actions/cart';
 import '../styles/Cart.scss';
 import CartEmpty from './CartEmpty';
 import Cart from './Cart';
 
-const CartContainer = ({ cart: { cart, loading }, getCart, sendOrder, history }) => {
-	const [cartData, setCartData] = useState(false);
+const CartContainer = ({ cart: { cart, loading }, sendOrder, history }) => {
 
-	useEffect(
-		() => {
-			getCart().then(
-				cart => {
-					if (cart.length > 0) setCartData(true);
-				}
-			);
-		},
-		[getCart]
-  );
-  
-
-  if(loading){
-    return <div>loading...</div>
-  }
-
-  if(cartData){
+  if(cart.length > 0){
     return <Cart cart={cart} loading={loading} sendOrder={sendOrder} history={history} />
-  }
-
-  if(!cartData){
+  }else {
     return <CartEmpty />
-  }
-
+	}
 };
 
 const mapStateToProps = state => ({

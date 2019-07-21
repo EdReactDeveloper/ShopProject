@@ -4,25 +4,28 @@ import { Product } from "../../../ui/icon/Selection";
 import {Link} from 'react-router-dom'; 
 import './Card.scss'; 
 import Rating from './Rating'; 
+import {formatTitle} from '../../../ui/misc/formatText'; 
 
 const SalesCard = ({item}) => {
  
+  const {_id, heading, images, rating, } = item
+
     return (
         <li className="sales__product-item">
-                <Link to={`/products/${item._id}`} className="sales__product-item-front">
+                <Link to={`/products/${_id}`} className="sales__product-item-front">
                   <img
-                    src={item.images[0]}
+                    src={images[0]}
                     alt="is missing"
                     className="sales__product-item-img"
                   />
                   <div className="sales__product-item-line" />
                   <div className="sales__product-item-infobox">
                     <h3 className="sales__product-item-infobox-heading">
-                      {item.heading}
+                      {formatTitle(heading)}
                     </h3>
                     <div className="sales__product-item-stats">
                     <div className="sales__product-item-stats-front">   
-                      <Rating stars={item.rating} />
+                      <Rating stars={rating} />
                       <div className="sales__product-item-price">$100</div>
                     </div>
                     </div>                    

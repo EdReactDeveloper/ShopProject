@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import './alert.scss';
 
-const Alert = ({message, status}) => {
-  return (
-    <div className={`alert container ${status === 'danger' ? 'danger' : 'success'}` } >
-      <p>{message}</p>
-    </div>
-  )
-}
+const Alert = ({ alerts }) =>
+	alerts !== null &&
+	alerts.length > 0 &&
+	alerts.map(alert => (
+		<div key={alert.id} className={`alert container alert-${alert.status}`}>
+			{alert.msg}
+		</div>
+	));
 
-export default Alert
+const mapStateToProps = state => ({
+	alerts: state.alert
+});
+
+export default connect(mapStateToProps)(Alert);

@@ -1,0 +1,17 @@
+.catalog {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin: 2rem 0;
+
+
+    @media only screen and (max-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and(max-width: 450px) {
+      grid-gap: .5rem;
+    }
+  }
+}

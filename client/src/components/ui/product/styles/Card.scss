@@ -7,18 +7,23 @@
   transition: all .8s ease;
   backface-visibility: hidden;
   padding: 2rem 4rem;
+
   @media only screen and (max-width: 900px) {
-      position: relative;
+    position: relative;
+  }
+
+  @media screen and(max-width: 450px) {
+    padding: .5rem 0;
   }
 }
 
 .card {
   &:hover &-front {
-      transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &-back {
-      transform: rotateY(0);
+    transform: rotateY(0);
   }
 
   position: relative;
@@ -30,7 +35,11 @@
   box-sizing: border-box;
 
   @media only screen and (max-width: 500px) {
-      height: 25rem;
+    height: 25rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    height: 20rem;
   }
 
 }

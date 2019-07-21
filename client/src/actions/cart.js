@@ -9,6 +9,7 @@ import {
 	GET_ORDERS_SUCCESS, 
 	GET_ORDERS_FAIL } from './types';
 import axios from 'axios';
+import {setAlert} from './alert'; 
 
 export const addToCart = (id, color, size, price) => async dispatch => {
 	const config = { headers: { 'Content-Type': 'application/json' } };
@@ -20,6 +21,7 @@ export const addToCart = (id, color, size, price) => async dispatch => {
 			payload: res.data
 		});
 		dispatch(getCart())
+		dispatch(setAlert('the item is added to the cart', 'success'))
 		return res.data
 	} catch (error) {
 		dispatch({

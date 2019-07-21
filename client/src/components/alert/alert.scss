@@ -1,11 +1,15 @@
-.alert{
-  width: 100%;
-}
+.alert {
+  width: 70%;
+  padding: .5rem;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 2rem;
 
-.danger{
-  background: #ff7675
-}
+  &-danger {
+    background: #ff7675;
+  }
 
-.success{
-background: #2ecc71
+  &-success {
+    background: #2ecc71
+  }
 }

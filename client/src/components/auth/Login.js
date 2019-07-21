@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {login} from '../../../../actions/auth'; 
+import {login} from '../../actions/auth'; 
 import {connect} from 'react-redux'
-import '../styles/Auth.scss'; 
+import './Auth.scss'; 
+import {setAlert} from '../../actions/alert'; 
 
-const Login = ({login, history}) => {
+const Login = ({login, setAlert, history}) => {
 	const [formData, setFormData] = useState({
 		password: '',
 		email: ''
@@ -19,7 +20,9 @@ const Login = ({login, history}) => {
     e.preventDefault()
     if(email && password){
       login(email, password, history)
-    }
+    }else{
+			setAlert('password and email are required', 'danger')
+		}
   };
 	return (
 		<div>
@@ -34,4 +37,4 @@ const Login = ({login, history}) => {
 	);
 };
 
-export default connect(null, {login})(Login);
+export default connect(null, {login, setAlert})(Login);
