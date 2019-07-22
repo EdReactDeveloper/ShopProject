@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles/Sizes.scss';
 import { connect } from 'react-redux';
 import { fetchSize } from '../../../actions/cart';
+import PropTypes from 'prop-types'; 
 
 const Sizes = ({ sizes, fetchSize }) => {
 	const [sizeData, setSize] = useState({
@@ -35,5 +36,11 @@ const Sizes = ({ sizes, fetchSize }) => {
 		</div>
 	);
 };
+
+Sizes.propTypes = {
+	fetchSize: PropTypes.func.isRequired,
+	sizes: PropTypes.array.isRequired,
+}
+
 
 export default connect(null, { fetchSize })(Sizes);

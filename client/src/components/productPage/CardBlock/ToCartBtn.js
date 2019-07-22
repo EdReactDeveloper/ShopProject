@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addToCart, getCart } from '../../../actions/cart';
 import { inCart } from '../../ui/misc/inCart';
 import '../styles/addToCart.scss';
-
+import PropTypes from 'prop-types'; 
 
 const ToCartBtn = ({ addToCart, getCart, product, cart: { cart, color, size } }) => {
 	const [inCartData, setInCart] = useState({
@@ -33,5 +33,14 @@ const ToCartBtn = ({ addToCart, getCart, product, cart: { cart, color, size } })
 		</div>
 	);
 };
+
+ToCartBtn.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+  getCart: PropTypes.func.isRequired,
+  product: PropTypes.object.isRequired,
+  cart: PropTypes.object.isRequired,
+  color: PropTypes.string,
+  size: PropTypes.string
+}
 
 export default connect(null, { addToCart, getCart })(ToCartBtn);

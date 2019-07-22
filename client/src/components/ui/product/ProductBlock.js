@@ -2,8 +2,9 @@ import React from "react";
 import Card from "./card";
 import {connect} from 'react-redux'
 import './styles/ProductBlock.scss'; 
+import PropTypes from 'prop-types'; 
 
-const Products = ({products: {products, loading}}) => {
+const Products = ({products: {products}}) => {
     return (
       <ul className="product-list" >
        {products && products.slice(0, 4).map(item=>{
@@ -16,5 +17,9 @@ const Products = ({products: {products, loading}}) => {
   const mapStateToProps = state => ({
     products: state.products
   })
+
+  Products.propTypes = {
+    products: PropTypes.object.isRequired
+  }
 
 export default connect(mapStateToProps)(Products);

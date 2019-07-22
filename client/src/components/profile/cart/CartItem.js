@@ -6,6 +6,7 @@ import Counter from './Counter';
 import Total from './Total';
 import Icon from '../../ui/icon/Icon';
 import { Product } from '../../ui/icon/Selection';
+import PropTypes from 'prop-types'; 
 
 const CartItem = ({ removeFromCart, index, item: { productId: { heading, images, _id, price }, color, size } }) => {
 	const removeHandler = id => {
@@ -40,5 +41,16 @@ const CartItem = ({ removeFromCart, index, item: { productId: { heading, images,
 		</li>
 	);
 };
+
+CartItem.propTypes = {
+  removeFromCart: PropTypes.func.isRequired,
+  index: PropTypes.number,
+  heading: PropTypes.string,
+  images: PropTypes.string,
+  _id: PropTypes.string,
+  price: PropTypes.number,
+  color: PropTypes.string,
+  size: PropTypes.string,
+}
 
 export default connect(null, { removeFromCart })(CartItem);

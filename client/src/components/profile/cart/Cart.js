@@ -1,5 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem'; 
+import PropTypes from 'prop-types'; 
 
 const Cart = ({cart, loading, sendOrder, history}) => {
   return (
@@ -14,6 +15,12 @@ const Cart = ({cart, loading, sendOrder, history}) => {
       </div>
       </>
   )
+}
+
+Cart.propTypes = {
+  sendOrder: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  cart: PropTypes.array.isRequired
 }
 
 export default Cart

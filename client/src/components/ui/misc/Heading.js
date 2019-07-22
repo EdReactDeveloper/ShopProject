@@ -1,5 +1,6 @@
 import React from "react";
 import './Heading.scss'; 
+import PropTypes from 'prop-types'; 
 
 const Heading = ({span, content, main, style}) => {
   return (
@@ -11,5 +12,12 @@ const Heading = ({span, content, main, style}) => {
     </React.Fragment>
   );
 };
+
+Heading.propTypes={
+  span: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  main: PropTypes.string.isRequired,
+  style: PropTypes.string,
+}
 
 export default Heading;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import {formatTitle} from '../../misc/formatText';
 import '../styles/Front.scss'; 
+import PropTypes from 'prop-types'; 
 
 const Cardfront = ({item}) => {
     return (
@@ -19,5 +20,9 @@ const Cardfront = ({item}) => {
       </Link>
     );
 };
+
+Cardfront.propTypes = {
+  item: PropTypes.object.isRequired
+}
 
 export default Cardfront;

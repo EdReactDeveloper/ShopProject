@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import '../styles/Image.scss';
+import PropTypes from 'prop-types'; 
 
 const ImageComponent = ({images}) => {
   
@@ -37,5 +38,9 @@ const ImageComponent = ({images}) => {
 		</div>
 	);
 };
+
+ImageComponent.propTypes = {
+	images: PropTypes.array.isRequired
+}
 
 export default ImageComponent;

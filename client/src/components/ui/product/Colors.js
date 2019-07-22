@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles/Colors.scss';
 import { connect } from 'react-redux';
 import { fetchColor } from '../../../actions/cart';
+import PropTypes from 'prop-types'; 
 
 const Colors = ({ colors, fetchColor }) => {
 	const [colorData, setColor] = useState({
@@ -38,5 +39,11 @@ const Colors = ({ colors, fetchColor }) => {
 		</div>
 	);
 };
+
+Colors.propTypes = {
+  colors: PropTypes.array.isRequired,
+  fetchColor: PropTypes.func.isRequired,
+}
+
 
 export default connect(null, { fetchColor })(Colors);

@@ -3,6 +3,7 @@ import {login} from '../../actions/auth';
 import {connect} from 'react-redux'
 import './Auth.scss'; 
 import {setAlert} from '../../actions/alert'; 
+import PropTypes from 'prop-types';
 
 const Login = ({login, setAlert, history}) => {
 	const [formData, setFormData] = useState({
@@ -36,5 +37,10 @@ const Login = ({login, setAlert, history}) => {
 		</div>
 	);
 };
+
+Login.propTypes = {
+	login: PropTypes.func.isRequired,
+	setAlert: PropTypes.func.isRequired
+}
 
 export default connect(null, {login, setAlert})(Login);

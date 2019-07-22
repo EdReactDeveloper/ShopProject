@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import {formatTitle} from '../../misc/formatText';
 import '../styles/Back.scss'; 
+import PropTypes from 'prop-types'; 
 
 const Cardback = ({item}) => {
     return (
@@ -41,5 +42,9 @@ const Cardback = ({item}) => {
       </Link>
     );
 };
+
+Cardback.propTypes = {
+  item: PropTypes.object.isRequired
+}
 
 export default Cardback;

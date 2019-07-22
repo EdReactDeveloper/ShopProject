@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom';
 import './Card.scss'; 
 import Rating from './Rating'; 
 import {formatTitle} from '../../../ui/misc/formatText'; 
+import PropTypes from 'prop-types'; 
 
 const SalesCard = ({item}) => {
  
   const {_id, heading, images, rating, } = item
-
     return (
         <li className="sales__product-item">
                 <Link to={`/products/${_id}`} className="sales__product-item-front">
@@ -43,5 +43,12 @@ const SalesCard = ({item}) => {
               </li>
     );
 };
+SalesCard.propTypes = { 
+  item: PropTypes.object,
+  _id: PropTypes.string, 
+  heading: PropTypes.string, 
+  imgaes: PropTypes.string, 
+  rating: PropTypes.number
+}
 
 export default SalesCard;

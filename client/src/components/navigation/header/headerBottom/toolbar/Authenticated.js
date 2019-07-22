@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Icon from '../../../../ui/icon/Icon'; 
 import {Product, Profile} from '../../../../ui/icon/Selection';
 import {getOrders} from '../../../../../actions/cart'; 
+import PropTypes from 'prop-types'; 
 
 const Authenticated = ({getOrders, logout}) => {
   
@@ -22,6 +23,11 @@ const Authenticated = ({getOrders, logout}) => {
       <li className="toolbar__item" onClick={logout}><Link to="/login"><Icon d={Profile.logout} className="toolbar__item-icon" /></Link></li>
     </Fragment>
   )
+}
+
+Authenticated.propTypes = {
+  getOrders: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired
 }
 
 export default connect(null, {logout, getOrders})(Authenticated)

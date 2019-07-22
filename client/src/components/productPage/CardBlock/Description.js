@@ -2,6 +2,7 @@ import React from 'react';
 import Colors from '../../ui/product/Colors';
 import Sizes from '../../ui/product/Sizes';
 import ToCartBtn from './ToCartBtn';
+import PropTypes from 'prop-types'; 
 
 const productDescription = ({ product, auth: { isAuthenticated, loading }, cart }) => {
 	const { heading, subheading, description, colors, sizes, price } = product;
@@ -26,5 +27,18 @@ const productDescription = ({ product, auth: { isAuthenticated, loading }, cart 
 		</div>
 	);
 };
+
+productDescription.propTypes = {
+	product: PropTypes.object.isRequired,
+	heading: PropTypes.string,
+	subheading: PropTypes.string,
+	description: PropTypes.string,
+	colors: PropTypes.array,
+	sizes: PropTypes.array,
+	price: PropTypes.number,	
+  isAuthenticated: PropTypes.func,
+	loading: PropTypes.bool,
+	cart: PropTypes.object.isRequired	 
+}
 
 export default productDescription;

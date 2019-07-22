@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getProducts} from '../../actions/products'; 
 import Card from '../ui/product/card/index'; 
 import './catalog.scss'; 
+import PropTypes from 'prop-types';
 
 const Products = ({getProducts, products: {products, loading}}) => {
   useEffect(()=>{
@@ -29,5 +30,11 @@ const Products = ({getProducts, products: {products, loading}}) => {
 const mapStateToProps = state => ({
   products: state.products
 })
+
+Products.propTypes = {
+  getProducts: PropTypes.func.isRequired, 
+  products: PropTypes.object.isRequired, 
+  loading: PropTypes.bool
+}
 
 export default connect(mapStateToProps, {getProducts})(Products)

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "./Image";
 import Description from './Description'; 
+import PropTypes from 'prop-types'; 
 
 const Product = ({product, cart, auth})=> {
     return (
@@ -15,6 +16,12 @@ const Product = ({product, cart, auth})=> {
         </div>
       </div>
     );
+}
+
+Product.propTypes = {
+  product: PropTypes.object.isRequired,
+  cart: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
 }
 
 

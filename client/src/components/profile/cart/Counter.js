@@ -2,8 +2,9 @@ import React from 'react';
 import '../styles/Counter.scss';
 import { connect } from 'react-redux';
 import { counter } from '../../../actions/cart';
+import PropTypes from 'prop-types'; 
 
-const Counter = ({ cart:{cart, loading}, index, id, counter }) => {
+const Counter = ({ cart:{cart}, index, id, counter }) => {
 	const quantity = cart[index].quantity
 
 
@@ -30,5 +31,12 @@ const Counter = ({ cart:{cart, loading}, index, id, counter }) => {
 const mapStateToProps = state => ({
   cart: state.cart
 })
+
+Counter.propTypes = {
+  cart: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  counter: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+}
 
 export default connect(mapStateToProps, { counter })(Counter);

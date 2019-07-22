@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'; 
+
 export const formatTitle=(title, limit=17)=>{    
   if(title.length > limit){
       const newTitle = []
@@ -10,4 +12,9 @@ export const formatTitle=(title, limit=17)=>{
       return `${newTitle.join(' ')}...`
   }
   return title 
+}
+
+formatTitle.propTypes={
+    title: PropTypes.string.isRequired,
+    limit: PropTypes.number.isRequired,
 }

@@ -11,8 +11,10 @@ import Profile from '../components/profile';
 import Cart from '../components/profile/cart';
 import Orders from '../components/profile/orders'; 
 import {connect} from 'react-redux'; 
-import Alert from '../components/alert'
-import Catalog from '../components/catalog'
+import Alert from '../components/alert';
+import Catalog from '../components/catalog';
+import PropTypes from 'prop-types'; 
+
 const Routes = ({loading}) => {
 	return (
 		<div>
@@ -38,8 +40,12 @@ const Routes = ({loading}) => {
 };
 
 const mapStateToProps = state => ({
-	loading: state.auth.loading,
-	alert: state.alert
+	loading: state.auth.loading
 })
+
+Routes.propTypes = {
+	loading: PropTypes.bool.isRequired,
+}
+
 
 export default connect(mapStateToProps)(Routes);

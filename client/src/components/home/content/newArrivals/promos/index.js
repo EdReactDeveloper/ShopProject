@@ -5,7 +5,7 @@ import PromoIcon from "./Icon";
 import {Link} from 'react-router-dom';
 import './Promos.scss'; 
 
-const promos = () => {
+const Promos = () => {
   return (
     <div className="promos__wrapper">
       <Link to="/" className="promos__left">
@@ -32,4 +32,4 @@ const promos = () => {
   );
 };
 
-export default promos;
+export default Promos;

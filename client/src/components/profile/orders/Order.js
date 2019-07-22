@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'; 
+import PropTypes from 'prop-types'; 
 
 const OrdersItem = ({item}) => {
 
@@ -10,6 +11,10 @@ const OrdersItem = ({item}) => {
       })}
     </ul>
   )
+}
+
+OrdersItem.propTypes = {
+  item: PropTypes.object.isRequired,
 }
 
 export default OrdersItem

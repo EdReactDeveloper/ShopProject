@@ -3,6 +3,7 @@ import {register} from '../../actions/auth';
 import {setAlert} from '../../actions/alert'; 
 import {connect} from 'react-redux'
 import './Auth.scss'; 
+import PropTypes from 'prop-types'; 
 
 const Register = ({register, setAlert, history}) => {
 	const [formData, setFormData] = useState({
@@ -41,5 +42,10 @@ const Register = ({register, setAlert, history}) => {
 		</div>
 	);
 };
+
+Register.propTypes = {
+	register: PropTypes.func.isRequired, 
+	setAlert: PropTypes.func.isRequired
+}
 
 export default connect(null, {register, setAlert})(Register);

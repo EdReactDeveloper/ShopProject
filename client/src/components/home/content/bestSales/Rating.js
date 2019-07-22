@@ -1,6 +1,8 @@
 import React from 'react'
 import { Product } from "../../../ui/icon/Selection";
 import Icon from "../../../ui/icon/Icon";
+import PropTypes from 'prop-types'; 
+
 const Rating = ({stars}) => {
   let arr = []
   for(let i = 0; i < stars; i++){
@@ -13,6 +15,10 @@ const Rating = ({stars}) => {
       })}
     </div>
   )
+}
+
+Rating.propTypes = { 
+  stars: PropTypes.number.isRequired
 }
 
 export default Rating

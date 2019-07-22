@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import NewsLetter from '../ui/misc/NewsLetter';
-import Heading from '../ui/misc/Heading';
 import Product from './CardBlock';
 import { connect } from 'react-redux';
 import { findProductById } from '../../actions/products';
 import './styles/product.scss';
 import { getCart } from '../../actions/cart';
+import PropTypes from 'prop-types'; 
 
 const ProductPage = ({ getCart, products: { product, loading }, findProductById, match, cart, auth }) => {
 	
@@ -36,5 +35,14 @@ const mapStateToProps = state => ({
 	cart: state.cart,
 	auth: state.auth
 });
+
+ProductPage.propTypes = {
+  getCart: PropTypes.func.isRequired,
+  product: PropTypes.object,
+  loading: PropTypes.bool,
+  cart: PropTypes.object.isRequired,
+  findProductById: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
 
 export default connect(mapStateToProps, { findProductById, getCart })(ProductPage);

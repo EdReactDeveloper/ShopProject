@@ -4,6 +4,7 @@ import { getCart, sendOrder } from '../../../actions/cart';
 import '../styles/Cart.scss';
 import CartEmpty from './CartEmpty';
 import Cart from './Cart';
+import PropTypes from 'prop-types'; 
 
 const CartContainer = ({ cart: { cart, loading }, getCart, sendOrder, history }) => {
 
@@ -25,5 +26,12 @@ const CartContainer = ({ cart: { cart, loading }, getCart, sendOrder, history })
 const mapStateToProps = state => ({
 	cart: state.cart
 });
+
+CartContainer.propTypes = {
+  cart: PropTypes.object.isRequired,
+  loading: PropTypes.bool,
+  getCart: PropTypes.func.isRequired,
+  sendOrder: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps, { getCart, sendOrder })(CartContainer);
