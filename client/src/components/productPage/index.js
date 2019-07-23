@@ -5,9 +5,10 @@ import { findProductById } from '../../store/actions/products';
 import './styles/product.scss';
 import { getCart } from '../../store/actions/cart';
 import PropTypes from 'prop-types'; 
+import Loader from '../ui/loader'; 
+
 
 const ProductPage = ({ getCart, products: { product, loading }, auth: {isAuthenticated}, findProductById, match, cart, auth }) => {
-	
 
 	useEffect(
 		() => {
@@ -26,7 +27,7 @@ const ProductPage = ({ getCart, products: { product, loading }, auth: {isAuthent
 			{product && cart && !loading ? (
 				<Product product={product} cart={cart} auth={auth} />
 			) : (
-				<div>loading...</div>
+				<Loader />
 			)}
 		</div>
 	);

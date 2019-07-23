@@ -5,6 +5,7 @@ import '../styles/Cart.scss';
 import CartEmpty from './CartEmpty';
 import Cart from './Cart';
 import PropTypes from 'prop-types'; 
+import Loader from '../../ui/loader';
 
 const CartContainer = ({ cart: { cart, loading }, getCart, sendOrder, history }) => {
 
@@ -13,7 +14,7 @@ const CartContainer = ({ cart: { cart, loading }, getCart, sendOrder, history })
   }, [getCart])
 
   if(loading){
-    return <div>loading...</div>
+    return <Loader />
   }
 
   if(cart.length > 0){
