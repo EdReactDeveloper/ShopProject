@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Counter.scss';
 import { connect } from 'react-redux';
-import { counter } from '../../../actions/cart';
+import { counter } from '../../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 
 const Counter = ({ cart:{cart}, index, id, counter }) => {

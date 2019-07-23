@@ -7,6 +7,9 @@ const bcrypt = require('bcryptjs');
 router.get('/', async (req, res, next) => {
 	try {
 		let user = await User.findById(req.session.user._id).select('-password');
+		if(!user) {
+			return res.status(404).json('unauthorized')
+		}
 		res.json(user);
 	} catch (error) {
 		res.status(400).json(error);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Sizes.scss';
 import { connect } from 'react-redux';
-import { fetchSize } from '../../../actions/cart';
+import { fetchSize } from '../../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 
 const Sizes = ({ sizes, fetchSize }) => {

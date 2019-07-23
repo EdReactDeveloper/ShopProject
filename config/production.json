@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://shoppy:password1234@shoppy-rhup0.mongodb.net/shoppy?retryWrites=true&w=majority"
+}

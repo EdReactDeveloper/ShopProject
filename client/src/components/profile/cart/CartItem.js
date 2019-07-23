@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { removeFromCart } from '../../../actions/cart';
+import { removeFromCart } from '../../../store/actions/cart';
 import Counter from './Counter';
 import Total from './Total';
 import Icon from '../../ui/icon/Icon';

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'; 
-import {getOrders} from '../../../actions/cart'; 
+import {getOrders} from '../../../store/actions/cart'; 
 import Order from './Order'; 
 import '../styles/Orders.scss'; 
 import PropTypes from 'prop-types'; 

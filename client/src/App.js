@@ -4,7 +4,7 @@ import './components/ui/icon/Icon.scss';
 import {Provider} from 'react-redux'; 
 import store from './store';
 import Routes from './routes/index'; 
-import {getUser } from './actions/auth'
+import {getUser } from './store/actions/auth'
 
 function App() {
   useEffect(()=>{

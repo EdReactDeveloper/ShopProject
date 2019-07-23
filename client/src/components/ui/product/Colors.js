@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Colors.scss';
 import { connect } from 'react-redux';
-import { fetchColor } from '../../../actions/cart';
+import { fetchColor } from '../../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 
 const Colors = ({ colors, fetchColor }) => {

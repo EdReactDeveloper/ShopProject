@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import Product from './CardBlock';
 import { connect } from 'react-redux';
-import { findProductById } from '../../actions/products';
+import { findProductById } from '../../store/actions/products';
 import './styles/product.scss';
-import { getCart } from '../../actions/cart';
+import { getCart } from '../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 
-const ProductPage = ({ getCart, products: { product, loading }, findProductById, match, cart, auth }) => {
+const ProductPage = ({ getCart, products: { product, loading }, auth: {isAuthenticated}, findProductById, match, cart, auth }) => {
 	
 
 	useEffect(
 		() => {
 			findProductById(match.params.id)
-			getCart()
+			if(isAuthenticated){
+				getCart()
+			}
 			return (()=> {
 				getCart()
 			})
 		},
-		[findProductById, getCart, match]
+		[findProductById, isAuthenticated, getCart, match]
 	);
 	return (
 		<div className="productPaged">

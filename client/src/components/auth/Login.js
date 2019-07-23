@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {login} from '../../actions/auth'; 
+import {login} from '../../store/actions/auth'; 
 import {connect} from 'react-redux'
 import './Auth.scss'; 
-import {setAlert} from '../../actions/alert'; 
+import {setAlert} from '../../store/actions/alert'; 
 import PropTypes from 'prop-types';
 
 const Login = ({login, setAlert, history}) => {

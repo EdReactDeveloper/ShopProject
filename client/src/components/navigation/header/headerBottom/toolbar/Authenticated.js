@@ -1,10 +1,10 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import { connect } from 'react-redux';
-import { logout } from '../../../../../actions/auth';
+import { logout } from '../../../../../store/actions/auth';
 import {Link} from 'react-router-dom'; 
 import Icon from '../../../../ui/icon/Icon'; 
 import {Product, Profile} from '../../../../ui/icon/Selection';
-import {getOrders} from '../../../../../actions/cart'; 
+import {getOrders} from '../../../../../store/actions/cart'; 
 import PropTypes from 'prop-types'; 
 
 const Authenticated = ({getOrders, logout}) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addToCart, getCart } from '../../../actions/cart';
+import { addToCart, getCart } from '../../../store/actions/cart';
 import { inCart } from '../../ui/misc/inCart';
 import '../styles/addToCart.scss';
 import PropTypes from 'prop-types'; 

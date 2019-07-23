@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {register} from '../../actions/auth'; 
-import {setAlert} from '../../actions/alert'; 
+import {register} from '../../store/actions/auth'; 
+import {setAlert} from '../../store/actions/alert'; 
 import {connect} from 'react-redux'
 import './Auth.scss'; 
 import PropTypes from 'prop-types'; 

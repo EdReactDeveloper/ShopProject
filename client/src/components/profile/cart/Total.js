@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { counter } from '../../../actions/cart';
+import { counter } from '../../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 
 const Total = ({ index, cart }) => {
