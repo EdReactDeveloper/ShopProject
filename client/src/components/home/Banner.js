@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "../ui/icon/Icon";
+import {Link} from 'react-router-dom'; 
 import { NavIcon } from "../ui/icon/Selection";
 import './Banner.scss'; 
 
@@ -28,7 +29,7 @@ const banner = () => {
               <div className="banner-price">Price: $120</div>
               <div className="banner-order">
                 <Icon d={NavIcon.basket} className="banner-icon" />
-                <p className="banner-order-text">Order Now</p>
+                <Link className="banner-order-text" to='/products/5d2a3ccdf6ab9c2654a8dd88'>Order Now</Link>
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ import Total from './Total';
 import Icon from '../../ui/icon/Icon';
 import { Product } from '../../ui/icon/Selection';
 import PropTypes from 'prop-types'; 
+import {formatTitle} from '../../ui/misc/formatText';
 
 const CartItem = ({ removeFromCart, index, item: { productId: { heading, images, _id, price }, color, size } }) => {
 	const removeHandler = id => {
@@ -18,7 +19,7 @@ const CartItem = ({ removeFromCart, index, item: { productId: { heading, images,
 				<img src={images[0]} alt={heading} className="cart__item_img" />
 			</div>
 			<h3 className="cart__item_heading">
-				<Link to={`/products/${_id}`}>{heading}</Link>
+				<Link to={`/products/${_id}`}>{formatTitle(heading)}</Link>
 			</h3>
 			<div className="cart__item_info">
 				<div>color: </div>

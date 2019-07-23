@@ -4,7 +4,7 @@ import {getOrders} from '../../../store/actions/cart';
 import Order from './Order'; 
 import '../styles/Orders.scss'; 
 import PropTypes from 'prop-types'; 
-
+import Loader from '../../ui/loader'
 const Orders = ({getOrders, orders: {orders, loading}}) => {
 useEffect(()=>{
   getOrders()
@@ -13,7 +13,7 @@ useEffect(()=>{
     <div className="orders__wrapper container">
       {orders && !loading ? orders.reverse().map(item=>(
         <Order item={item} key={item._id}/>
-      )): <div>loading...</div>}
+      )): <Loader/>}
     </div>
   )
 }

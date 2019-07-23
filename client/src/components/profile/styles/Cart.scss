@@ -1,7 +1,6 @@
 .cart {
 
   &__list {
-    background: #fff;
     display: flex;
     flex-direction: column;
   }
@@ -15,12 +14,14 @@
   }
 
   &__item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(3, 1fr);
     align-items: center;
     padding: 2rem;
     height: 15rem;
+    background: #fff;
     border: 1px solid #ccc;
+    margin-top: 1rem;
 
     @media only screen and (max-width: 900px) {
       display: grid;
@@ -54,11 +55,13 @@
     }
 
     &_quantity {
-      grid-column: 3/4;
+
+      @media only screen and (max-width: 900px) {
+        grid-column: 3/4;
+      }
 
       @media only screen and (max-width: 350px) {
         grid-column: 2/3;
-
       }
     }
 
@@ -72,7 +75,7 @@
       & div:nth-child(odd) {
         font-size: 1.4rem;
         color: #666;
-        justify-self: flex-start;
+        justify-self: flex-end;
       }
 
       @media only screen and (max-width: 900px) {
@@ -93,7 +96,7 @@
     }
 
     &_img {
-      height: 100%;
+      width: 100%;
 
       @media only screen and (max-width: 900px) {
         width: 100%;
@@ -142,6 +145,7 @@
       width: 2rem;
       height: 2rem;
       border-radius: 50%;
+      border: 1px solid #ccc;
 
     }
 
@@ -185,7 +189,7 @@
     &-wrapper {
       display: flex;
       justify-content: flex-end;
-      padding: 2rem;
+      padding: 2rem 0;
     }
 
     &-btn {

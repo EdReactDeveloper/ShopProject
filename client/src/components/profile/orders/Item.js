@@ -13,12 +13,12 @@ const Item = ({ product }) => {
 					<div style={{ background: color }} className="orders__order_item-color" />
 				</div>
 				<div className="orders__order_item_info">
-					<div>quantity:</div>
-					<div>{quantity}</div>
+					<div>quantity: </div>
+					<div className="orders__order_item_info_cell">{quantity}</div>
 					<div>price: </div>
 					<div>${price}</div>
 				</div>
-			<div>total: ${total}</div>
+			<div>total: <strong>${total}</strong></div>
 		</li>
 	);
 };

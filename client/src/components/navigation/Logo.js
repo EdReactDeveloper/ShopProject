@@ -1,10 +1,11 @@
 import React from 'react';
 import image from '../../assests/logo.png';
+import {Link } from 'react-router-dom'; 
 import './Logo.scss';
 
 const Logo = () => {
 	return (
-		<div className="logo-wrapper">
+		<Link to="/" className="logo-wrapper">
 			<div className="logo-box">
 				<div>SH</div>
 				<div className="logo-imagewrapper">
@@ -13,7 +14,7 @@ const Logo = () => {
 				<div>PY</div>
 			</div>
 			<div className="logo-sublogo">shops any where</div>
-		</div>
+		</Link>
 	);
 };
 
