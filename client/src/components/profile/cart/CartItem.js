@@ -8,6 +8,7 @@ import Icon from '../../ui/icon/Icon';
 import { Product } from '../../ui/icon/Selection';
 import PropTypes from 'prop-types'; 
 import {formatTitle} from '../../ui/misc/formatText';
+import {FormattedMessage} from 'react-intl'; 
 
 const CartItem = ({ removeFromCart, index, item: { productId: { heading, images, _id, price }, color, size } }) => {
 	const removeHandler = id => {
@@ -22,13 +23,21 @@ const CartItem = ({ removeFromCart, index, item: { productId: { heading, images,
 				<Link to={`/products/${_id}`}>{formatTitle(heading)}</Link>
 			</h3>
 			<div className="cart__item_info">
-				<div>color: </div>
+				<div>
+				<FormattedMessage id="color" defaultMessage= "color"/>:
+
+				</div>
 				<div className="cart__item_color" style={{ background: color }} />
-				<div>size: </div>
+				<div>
+				<FormattedMessage id="size" defaultMessage= "size"/>: </div>
 				<div className="cart__item_size">{size}</div>
-				<div>price: </div>
+				<div>
+				<FormattedMessage id="price" defaultMessage= "price"/>
+					: </div>
 				<div>${price}</div>
-				<div>total: </div>
+				<div>
+				<FormattedMessage id="total" defaultMessage= "total"/>
+					: </div>
 				<Total index={index} />
 			</div>
 			<div className="cart__item_quantity">

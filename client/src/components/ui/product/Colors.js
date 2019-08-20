@@ -3,6 +3,7 @@ import './styles/Colors.scss';
 import { connect } from 'react-redux';
 import { fetchColor } from '../../../store/actions/cart';
 import PropTypes from 'prop-types'; 
+import {FormattedMessage} from 'react-intl'; 
 
 const Colors = ({ colors, fetchColor }) => {
 	const [colorData, setColor] = useState({
@@ -25,7 +26,11 @@ const Colors = ({ colors, fetchColor }) => {
 	};
 	return (
 		<div className="colors__wrapper">
-			<span className="colors__label">Color</span>
+			<span className="colors__label">
+			<FormattedMessage id="color" defaultMessage= "Color"/>
+				
+
+			</span>
 			<div className="colors__list">
 				{colors.map((item, i) => (
 					<button

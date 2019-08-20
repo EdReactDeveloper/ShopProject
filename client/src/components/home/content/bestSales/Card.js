@@ -6,6 +6,7 @@ import './Card.scss';
 import Rating from './Rating'; 
 import {formatTitle} from '../../../ui/misc/formatText'; 
 import PropTypes from 'prop-types'; 
+import {FormattedMessage} from 'react-intl'; 
 
 const SalesCard = ({item}) => {
  
@@ -35,7 +36,8 @@ const SalesCard = ({item}) => {
                           d={Product.cart}
                           className="sales__product-icon-cart"
                         />
-                        add to cart
+          <FormattedMessage id="addtocart" defaultMessage= "add to cart"/>
+
                       </div>
                     </div>
                   </div>

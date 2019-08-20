@@ -5,6 +5,7 @@ import { addToCart, getCart } from '../../../store/actions/cart';
 import { inCart } from '../../ui/misc/inCart';
 import '../styles/addToCart.scss';
 import PropTypes from 'prop-types'; 
+import {FormattedMessage} from 'react-intl'; 
 
 const ToCartBtn = ({ addToCart, getCart, product, cart: { cart, color, size } }) => {
 	const [inCartData, setInCart] = useState({
@@ -25,10 +26,16 @@ const ToCartBtn = ({ addToCart, getCart, product, cart: { cart, color, size } })
 		<div>
 			{isInCart ? (
 				<button className="toCart__btn">
-					<Link to="/cart">in cart</Link>
+					<Link to="/cart">
+          <FormattedMessage id="incart" defaultMessage= "in cart"/>
+						</Link>
 				</button>
 			) : (
-				<button className="toCart__btn" onClick={() => cartHandler(product._id, color, size, product.price)}>add to cart</button>
+				<button className="toCart__btn" onClick={() => cartHandler(product._id, color, size, product.price)}>
+          <FormattedMessage id="addtocart" defaultMessage= "add to cart"/>
+					
+
+				</button>
 			)}
 		</div>
 	);

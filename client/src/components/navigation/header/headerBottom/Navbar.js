@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 const nav = [
-	{ title: 'Home', link: '/' },
+	{ title: 'Home', link: '/', },
 	{ title: 'Catalog', link: '/catalog' }
 ];
 
@@ -12,7 +13,7 @@ const Navbar = () => {
 			{nav.map((item, i) => (
 				<li className="navigation-item" key={i}>
 					<NavLink to={item.link} exact activeClassName="my-active" className="navigation-link">
-						{item.title}
+					<FormattedMessage id={item.title} defaultMessage={item.title} />
 					</NavLink>
 				</li>
 			))}

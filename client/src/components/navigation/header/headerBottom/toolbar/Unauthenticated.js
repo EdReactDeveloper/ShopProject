@@ -1,14 +1,17 @@
 import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom';
+import {FormattedMessage} from 'react-intl';
 
 const UnAuthenticated = () => {
 	return (
 		<Fragment>
 			<li className="toolbar__item">
-				<Link to="/login">login</Link>
+				<Link to="/login">
+					<FormattedMessage id="login" defaultMessage="login" />
+				</Link>
 			</li>
 			<li className="toolbar__item">
-				<Link to="/register">register</Link>
+				<Link to="/register"><FormattedMessage id="register" defaultMessage="register" /></Link>
 			</li>
 		</Fragment>
 	);

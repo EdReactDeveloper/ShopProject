@@ -3,6 +3,7 @@ import './styles/Sizes.scss';
 import { connect } from 'react-redux';
 import { fetchSize } from '../../../store/actions/cart';
 import PropTypes from 'prop-types'; 
+import {FormattedMessage} from 'react-intl'; 
 
 const Sizes = ({ sizes, fetchSize }) => {
 	const [sizeData, setSize] = useState({
@@ -25,7 +26,9 @@ const Sizes = ({ sizes, fetchSize }) => {
 	};
 	return (
 		<div className="size__wrapper">
-			<span className="size__label">Size</span>
+			<span className="size__label">
+			<FormattedMessage id="size" defaultMessage= "Size"/>
+				</span>
 			<div className="size__list">
 				{sizes.map((item, i) => (
 					<div style={{ background: item }} className={`size__item ${i === index && 'size__selected'}`} onClick={() => sizeHandler(i)} key={item}>

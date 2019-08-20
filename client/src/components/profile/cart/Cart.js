@@ -2,6 +2,8 @@ import React from 'react'
 import CartItem from './CartItem'; 
 import PropTypes from 'prop-types'; 
 import Loader from '../../ui/loader'; 
+import {FormattedMessage} from 'react-intl'; 
+
 const Cart = ({cart, loading, sendOrder, history}) => {
   return (
     <div className="container">
@@ -11,7 +13,10 @@ const Cart = ({cart, loading, sendOrder, history}) => {
       }): <Loader/>}
       </ul>
       <div className="cart__order-wrapper">
-      <button className="cart__order-btn" onClick={()=> sendOrder(cart, history)}>order</button>
+      <button className="cart__order-btn" onClick={()=> sendOrder(cart, history)}>
+      <FormattedMessage id="order" defaultMessage= "order"/>
+        
+      </button>
       </div>
       </div>
   )

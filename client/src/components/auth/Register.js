@@ -4,6 +4,7 @@ import {setAlert} from '../../store/actions/alert';
 import {connect} from 'react-redux'
 import './Auth.scss'; 
 import PropTypes from 'prop-types'; 
+import { FormattedMessage } from 'react-intl';
 
 const Register = ({register, setAlert, history}) => {
 	const [formData, setFormData] = useState({
@@ -31,13 +32,13 @@ const Register = ({register, setAlert, history}) => {
 	return (
 		<div>
 			<form onSubmit={onSubmit} className='login__form'>
-        <label htmlFor="email" className="login__label">email</label>
+        <label htmlFor="email" className="login__label"><FormattedMessage id="email" defaultMessage="email" /></label>
 				<input className="login__input" type="text" name="email" onChange={(e) => onChange(e)} />
-        <label htmlFor="password" className="login__label">password</label>
+        <label htmlFor="password" className="login__label">	<FormattedMessage id="password" defaultMessage="password" /></label>
 				<input className="login__input" type="text" name="password" onChange={(e) => onChange(e)} />
-        <label htmlFor="password" className="login__label">re-enter your password</label>
+        <label htmlFor="password" className="login__label"><FormattedMessage id="re-enter.password" defaultMessage="re-enter your password" /></label>
 				<input className="login__input" type="text" name="password2" onChange={(e) => onChange(e)} />
-        <button className="login__button">confirm</button>
+        <button className="login__button"><FormattedMessage id="confirm" defaultMessage="confirm" /></button>
 			</form>
 		</div>
 	);

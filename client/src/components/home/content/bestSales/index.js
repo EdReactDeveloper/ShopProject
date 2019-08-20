@@ -11,7 +11,7 @@ const BestSales = ({products}) => {
       <div className="sales__wrapper">
         <Heading 
        span="best" main='sales' 
-       content=" Lorem Ipsum is simply dummy text of the printing and typesetting
+       content="lorem Ipsum is simply dummy text of the printing and typesetting
        industry"
         />  
        <List products={products} />

@@ -2,7 +2,8 @@ import React from 'react';
 import Colors from '../../ui/product/Colors';
 import Sizes from '../../ui/product/Sizes';
 import ToCartBtn from './ToCartBtn';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 const productDescription = ({ product, auth: { isAuthenticated, loading }, cart }) => {
 	const { heading, subheading, description, colors, sizes, price } = product;
@@ -17,11 +18,11 @@ const productDescription = ({ product, auth: { isAuthenticated, loading }, cart 
 					<Colors colors={colors} />
 					<Sizes sizes={sizes} />
 				</div>
-			
 			</div>
-
 			<div className="productPage__right-order--wrapper">
-				<div className="productPage__right-order--price">Price: ${price}</div>
+				<div className="productPage__right-order--price">
+					<FormattedMessage id="price" defaultMessage="price" />: ${price}
+				</div>
 				{isAuthenticated && !loading && <ToCartBtn cart={cart} product={product} />}
 			</div>
 		</div>
@@ -35,10 +36,10 @@ productDescription.propTypes = {
 	description: PropTypes.string,
 	colors: PropTypes.array,
 	sizes: PropTypes.array,
-	price: PropTypes.number,	
-  isAuthenticated: PropTypes.func,
+	price: PropTypes.number,
+	isAuthenticated: PropTypes.func,
 	loading: PropTypes.bool,
-	cart: PropTypes.object.isRequired	 
-}
+	cart: PropTypes.object.isRequired
+};
 
 export default productDescription;
