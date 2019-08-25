@@ -7,30 +7,30 @@ import PropTypes from 'prop-types';
 import Loader from '../ui/loader';
 
 const Catalog = ({ getProducts, products: { products, loading } }) => {
-	useEffect(
-		() => {
-			getProducts();
-		},
-		[getProducts]
-	);
+  useEffect(
+    () => {
+      getProducts();
+    },
+    [getProducts]
+  );
 
-	let productsList = products.map(item => <Card item={item} key={item._id} />);
+  let productsList = products.map(item => <Card item={item} key={item._id} />);
 
-	return (
-		<section className="container">
-			{products && !loading ? <ul className="catalog__list">{productsList}</ul> : <Loader />}
-		</section>
-	);
+  return (
+    <section className="container">
+      {products && !loading ? <ul className="catalog__list">{productsList}</ul> : <Loader />}
+    </section>
+  );
 };
 
 const mapStateToProps = state => ({
-	products: state.products
+  products: state.products
 });
 
 Catalog.propTypes = {
-	getProducts: PropTypes.func.isRequired,
-	products: PropTypes.object.isRequired,
-	loading: PropTypes.bool
+  getProducts: PropTypes.func.isRequired,
+  products: PropTypes.object.isRequired,
+  loading: PropTypes.bool
 };
 
 export default connect(mapStateToProps, { getProducts })(Catalog);

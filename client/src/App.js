@@ -18,17 +18,17 @@ const language = navigator.language.split(/[-_]/)[0];
 
 function App() {
   useEffect(() => {
-		store.dispatch(getUser());
-	}, []);
-	return (
-		<div className="App">
-			<IntlProvider locale={language} messages={messages[language]}>
-				<Provider store={store}>
-					<Routes />
-				</Provider>
-			</IntlProvider>
-		</div>
-	);
+    store.dispatch(getUser());
+  }, []);
+  return (
+    <div className="App">
+      <IntlProvider locale={language} messages={messages[language]}>
+        <Provider store={store}>
+          <Routes />
+        </Provider>
+      </IntlProvider>
+    </div>
+  );
 }
 
 export default App;

@@ -6,23 +6,23 @@ import { getProducts } from '../../store/actions/products';
 import PropTypes from 'prop-types';
 
 const Home = ({ getProducts }) => {
-	useEffect(
-		() => {
-			getProducts();
-		},
-		[getProducts]
-	);
+  useEffect(
+    () => {
+      getProducts();
+    },
+    [getProducts]
+  );
 
-	return (
-		<main className="main">
-			<Banner />
-			<Content />
-		</main>
-	);
+  return (
+    <main className="main">
+      <Banner />
+      <Content />
+    </main>
+  );
 };
 
 Home.propTypes = {
-	getProducts: PropTypes.func.isRequired
+  getProducts: PropTypes.func.isRequired
 };
 
 export default connect(null, { getProducts })(Home);

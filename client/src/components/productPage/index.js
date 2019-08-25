@@ -9,33 +9,33 @@ import Loader from '../ui/loader';
 
 const ProductPage = ({ getCart, products: { product, loading }, auth: {isAuthenticated}, findProductById, match, cart, auth }) => {
 
-	useEffect(
-		() => {
-			findProductById(match.params.id)
-			if(isAuthenticated){
-				getCart()
-			}
-			return (()=> {
-				getCart()
-			})
-		},
-		[findProductById, isAuthenticated, getCart, match]
-	);
-	return (
-		<div className="productPaged">
-			{product && cart && !loading ? (
-				<Product product={product} cart={cart} auth={auth} />
-			) : (
-				<Loader />
-			)}
-		</div>
-	);
+  useEffect(
+    () => {
+      findProductById(match.params.id)
+      if(isAuthenticated){
+        getCart()
+      }
+      return (()=> {
+        getCart()
+      })
+    },
+    [findProductById, isAuthenticated, getCart, match]
+  );
+  return (
+    <div className="productPaged">
+      {product && cart && !loading ? (
+        <Product product={product} cart={cart} auth={auth} />
+      ) : (
+        <Loader />
+      )}
+    </div>
+  );
 };
 
 const mapStateToProps = state => ({
-	products: state.products,
-	cart: state.cart,
-	auth: state.auth
+  products: state.products,
+  cart: state.cart,
+  auth: state.auth
 });
 
 ProductPage.propTypes = {

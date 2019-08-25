@@ -6,26 +6,26 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const BestSales = ({ products }) => {
-	return (
-		<section className="sales__wrapper">
-			<Heading
-				span="best"
-				main="sales"
-				content="lorem Ipsum is simply dummy text of the printing and typesetting
+  return (
+    <section className="sales__wrapper">
+      <Heading
+        span="best"
+        main="sales"
+        content="lorem Ipsum is simply dummy text of the printing and typesetting
        industry"
-			/>
-			<List products={products} />
-			<NewsLetter />
-		</section>
-	);
+      />
+      <List products={products} />
+      <NewsLetter />
+    </section>
+  );
 };
 
 const mapStateToProps = state => ({
-	products: state.products
+  products: state.products
 });
 
 BestSales.propTypes = {
-	products: PropTypes.object.isRequired
+  products: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps)(BestSales);
