@@ -1,8 +1,9 @@
 html {
-  font-size: 62.5%; 
-  @media (max-width: 500px){
-   font-size: 50%;
-}
+  font-size: 62.5%;
+
+  @media (max-width: 500px) {
+    font-size: 50%;
+  }
 }
 
 *,
@@ -13,39 +14,37 @@ html {
   box-sizing: inherit;
 }
 
-ul{
-  list-style: none; 
+ul {
+  list-style: none;
 }
-a{
+
+a {
   text-decoration: none;
   outline: none;
   color: inherit;
 }
 
-body { 
+body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 1.6;
   color: #666;
-  
 }
 
 .wrapper {
-    
-  border: 1px solid #f4f6f8; 
+  border: 1px solid #f4f6f8;
   background: #f4f6f8
 }
-.container{
+
+.container {
   max-width: 120rem;
-  margin: 0 auto; 
+  margin: 0 auto;
   height: 100%;
   display: block;
 
-  @media (max-width: 1240px){
-      padding: 0 2rem;
-      margin: 0;
+  @media (max-width: 1240px) {
+    padding: 0 2rem;
+    margin: 0;
   }
 }
-
-

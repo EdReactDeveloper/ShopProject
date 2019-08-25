@@ -5,7 +5,7 @@ import ProductList from '../../../ui/product/ProductBlock';
 
 const NewArrivals = () => {
 	return (
-		<div className="content__wrapper">
+		<section className="content__wrapper">
 			<Heading
 				span="new"
 				main="arrivals"
@@ -18,7 +18,7 @@ const NewArrivals = () => {
 					<Promos />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

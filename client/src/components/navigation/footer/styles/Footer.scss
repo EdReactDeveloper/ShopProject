@@ -5,31 +5,31 @@
   align-items: center;
 
   &__wrapper {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      height: 9rem;
-      flex-wrap: wrap;
-      padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 9rem;
+    flex-wrap: wrap;
+    padding: 2rem;
 
-      @media only screen and (max-width: 900px) {
-          height: auto;
-          justify-content: space-around;
-          margin: 0 auto;
-          &>* {
-              margin-top: 3rem;              
-          }
+    @media only screen and (max-width: 900px) {
+      height: auto;
+      justify-content: space-around;
+      margin: 0 auto;
+
+      &>* {
+        margin-top: 3rem;
       }
-      @media only screen and (max-width: 450px) {
-          flex-direction: column;        
-       }
+    }
+
+    @media only screen and (max-width: 450px) {
+      flex-direction: column;
+    }
   }
 
   @media only screen and (max-width: 900px) {
-      height: auto;
-
+    height: auto;
   }
-
 }

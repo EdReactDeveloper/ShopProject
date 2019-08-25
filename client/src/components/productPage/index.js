@@ -7,7 +7,6 @@ import { getCart } from '../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 import Loader from '../ui/loader'; 
 
-
 const ProductPage = ({ getCart, products: { product, loading }, auth: {isAuthenticated}, findProductById, match, cart, auth }) => {
 
 	useEffect(

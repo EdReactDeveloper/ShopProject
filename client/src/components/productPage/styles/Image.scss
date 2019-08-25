@@ -1,4 +1,4 @@
-@import '../../../Variables.scss'; 
+@import '../../../Variables.scss';
 
 .productImage {
   &__left {
@@ -13,8 +13,6 @@
       margin-bottom: 2rem;
     }
 
-  
-
     &-img--wrapper {
       height: 28rem;
       width: 100%;
@@ -24,7 +22,6 @@
 
       @media only screen and (max-width: 768px) {
         height: 20rem;
-
       }
     }
 
@@ -35,7 +32,6 @@
     &-tmbbox {
       display: flex;
       height: 7rem;
-
     }
 
     &-tmbwrapper {
@@ -48,7 +44,6 @@
 
       @media only screen and (max-width: 768px) {
         width: 7rem;
-
       }
     }
 
@@ -56,7 +51,7 @@
       height: 50%;
     }
 
-    &-selected{
+    &-selected {
       background: $color-primary;
     }
   }

@@ -1,28 +1,30 @@
-import { 
-	CART_SUCCESS, 
-	CART_FAIL, 
-	FETCH_SIZE, 
-	FETCH_COLOR, 
-	COUTNER, 
-	ORDER_SUCCESS, 
-	ORDER_FAIL, 
-	GET_ORDERS_SUCCESS, 
-	GET_ORDERS_FAIL } from './types';
+import {
+	CART_SUCCESS,
+	CART_FAIL,
+	FETCH_SIZE,
+	FETCH_COLOR,
+	COUTNER,
+	ORDER_SUCCESS,
+	ORDER_FAIL,
+	GET_ORDERS_SUCCESS,
+	GET_ORDERS_FAIL
+} from './types';
 import axios from 'axios';
-import {setAlert} from './alert'; 
+import { setAlert } from './alert';
 
 export const addToCart = (id, color, size, price) => async dispatch => {
 	const config = { headers: { 'Content-Type': 'application/json' } };
 	const body = JSON.stringify({ id, color, size, price });
+
 	try {
 		const res = await axios.post('/api/shop/toCart', body, config);
 		dispatch({
 			type: CART_SUCCESS,
 			payload: res.data
 		});
-		dispatch(getCart())
-		dispatch(setAlert('the item is added to the cart', 'success'))
-		return res.data
+		dispatch(getCart());
+		dispatch(setAlert('the item is added to the cart', 'success'));
+		return res.data;
 	} catch (error) {
 		dispatch({
 			type: CART_FAIL
@@ -37,7 +39,7 @@ export const getCart = () => async dispatch => {
 			type: CART_SUCCESS,
 			payload: res.data
 		});
-		return res.data
+		return res.data;
 	} catch (error) {
 		dispatch({
 			type: CART_FAIL
@@ -48,6 +50,7 @@ export const getCart = () => async dispatch => {
 export const removeFromCart = id => async dispatch => {
 	const config = { headers: { 'Content-Type': 'application/json' } };
 	const body = JSON.stringify({ id });
+
 	try {
 		await axios.post('/api/shop/remove', body, config);
 		dispatch(getCart());
@@ -58,56 +61,56 @@ export const removeFromCart = id => async dispatch => {
 	}
 };
 
-export const fetchColor = (color) => dispatch => {
-	 dispatch({
-		 type: FETCH_COLOR, 
-		 payload: color
-	 })
-}
-
-export const fetchSize = (size) => dispatch => {
+export const fetchColor = color => dispatch => {
 	dispatch({
-		type: FETCH_SIZE, 
+		type: FETCH_COLOR,
+		payload: color
+	});
+};
+
+export const fetchSize = size => dispatch => {
+	dispatch({
+		type: FETCH_SIZE,
 		payload: size
-	})
-}
+	});
+};
 
-
-export const counter = (quantity, id) => dispatch =>{
+export const counter = (quantity, id) => dispatch => {
 	dispatch({
-		type: COUTNER, 
-		payload: {quantity, id}
-	})
-}
+		type: COUTNER,
+		payload: { quantity, id }
+	});
+};
 
 export const sendOrder = (cart, history) => async dispatch => {
-	const config={headers:{'Content-Type': 'application/json'}}
-	const body = JSON.stringify({cart})
+	const config = { headers: { 'Content-Type': 'application/json' } };
+	const body = JSON.stringify({ cart });
+
 	try {
-		const res = await axios.post('/api/order/post', body, config)
+		const res = await axios.post('/api/order/post', body, config);
 		dispatch({
-			type: ORDER_SUCCESS, 
+			type: ORDER_SUCCESS,
 			payload: res.data
-		})
-		history.push('/orders')
+		});
+		history.push('/orders');
 	} catch (error) {
 		dispatch({
 			type: ORDER_FAIL
-		})
+		});
 	}
-}
+};
 
-export const getOrders = () => async dispatch =>{
+export const getOrders = () => async dispatch => {
 	try {
-		const res = await axios('/api/order/get')
+		const res = await axios('/api/order/get');
 		dispatch({
-			type: GET_ORDERS_SUCCESS, 
+			type: GET_ORDERS_SUCCESS,
 			payload: res.data
-		})
-		return res.data
+		});
+		return res.data;
 	} catch (error) {
 		dispatch({
 			type: GET_ORDERS_FAIL
-		})
+		});
 	}
-}
+};

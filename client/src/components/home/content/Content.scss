@@ -1,39 +1,36 @@
-@import '../../../Variables.scss'; 
+@import '../../../Variables.scss';
 
 .content {
-
   &__heading {
-      margin-top: 12rem;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-      text-align: center;
-      font-weight: 900;
-      font-size: 3.6rem;
+    margin-top: 12rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    font-size: 3.6rem;
 
-      @media (max-width: 900px) {
-          margin-top: 3rem;
-      }
+    @media (max-width: 900px) {
+      margin-top: 3rem;
+    }
 
-      @media screen and(max-width: 450px) {
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-      }
+    @media screen and(max-width: 450px) {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
 
-      span {
-          color: $color-primary;
-      }
+    span {
+      color: $color-primary;
+    }
   }
 
   &__subheading {
+    margin-bottom: 8rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.6rem;
 
-      margin-bottom: 8rem;
-      text-align: center;
-      font-weight: 400;
-      font-size: 1.6rem;
-
-      @media screen and(max-width: 450px) {
-          margin-bottom: 3rem;
-      }
+    @media screen and(max-width: 450px) {
+      margin-bottom: 3rem;
+    }
   }
-
 }

@@ -4,11 +4,11 @@ import Footer from './footer';
 
 const Navigation = props => {
 	return (
-		<div className="wrapper">
+		<main className="wrapper">
 			<Header />
 			{props.children}
 			<Footer />
-		</div>
+		</main>
 	);
 };
 

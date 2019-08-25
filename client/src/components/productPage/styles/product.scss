@@ -1,4 +1,4 @@
-@import '../../../Variables.scss'; 
+@import '../../../Variables.scss';
 
 .productPage {
   &__background {
@@ -11,7 +11,6 @@
 
     @media only screen and (max-width: 768px) {
       flex-direction: column;
-
     }
 
     @media only screen and (max-width: 500px) {
@@ -75,7 +74,6 @@
             margin: 1rem auto;
           }
         }
-
       }
 
       &--choosewrapper {
@@ -101,7 +99,6 @@
         @media only screen and (max-width: 500px) {
           border: 0;
         }
-
       }
 
       &--right {
@@ -144,8 +141,6 @@
         box-sizing: border-box;
       }
 
-
-
       &--button {
         background: none;
         border: none;
@@ -153,7 +148,6 @@
         padding: 1rem;
         border: 1px solid #ccc;
         cursor: pointer;
-
       }
     }
 
@@ -165,7 +159,6 @@
         @media only screen and (max-width: 500px) {
           flex-direction: column;
           justify-content: space-between;
-
         }
       }
 
@@ -173,7 +166,6 @@
         font-size: 2rem;
         font-weight: 900;
         margin-right: auto;
-
       }
 
       &--icon {
@@ -204,5 +196,4 @@
       justify-content: space-around;
     }
   }
-
 }

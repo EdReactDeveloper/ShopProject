@@ -1,168 +1,168 @@
-@import '../../../../../Variables.scss'; 
+@import '../../../../../Variables.scss';
 
 .promos {
-
-    &__icon{
-
-        &-wrapper {
-            position: relative;
-            width: 10rem;
-            height: 10rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-
-        &-heading {
-            display: flex;
-            flex-direction: column; 
-            justify-content: center;
-            align-items: center;
-            transform: rotate(-45deg);
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #fff;
-            line-height: 1.8rem;
-            span {
-                font-weight: 400;
-                font-size: 1.2rem;
-            }
-        }
-
-        &-front {
-            width: 6rem;
-            height: 6rem;
-            background: $color-primary;
-            transform: rotate(45deg);
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 5;
-           
-    
-        }
-    
-        &-back {
-            width: 6rem;
-            height: 6rem;
-            background: $color-primary;
-            position: absolute;
-            filter: brightness(90%);
-            transform: rotate(45deg) translate(-.5rem, .5rem);           
-        }   
+  &__icon {
+    &-wrapper {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    &__wrapper {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(-45deg);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.8rem;
 
-        @media only screen and (max-width: 900px){
-            flex-direction: column; 
-            height: 20rem;
-        }
-        @media only screen and(max-width: 450px) {
-            height: auto;
-        }
+      span {
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
     }
 
-    &__left {
-        display: flex;
-        width: 67rem;
-        background: #fff;
-        align-items: center;
-        height: 10rem;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-right: 3rem;
-
-        @media only screen and (max-width: 900px){
-            width: 100%;
-            margin: 0 auto;
-            margin-bottom: 3rem;
-        
-        }
-        @media only screen and(max-width: 450px) {
-            flex-direction: column; 
-            height: auto; 
-            &>*{
-                margin: 1rem auto;
-            }
-
-                     
-        }
-        
-        &-headingbox{
-            padding-right: 3rem;
-            border-right: 1px solid #ccc;
-            @media only screen and(max-width: 450px) {
-                margin-right: none;
-                border-right: none; 
-                border-top: 1px solid #ccc;
-                padding-top: 2rem;
-                text-align: center;
-
-            }
-        }
-        &-heading {
-            font-weight: 900;
-            font-size: 2.2rem; 
-        }        
-
-        &-subheading {
-            font-weight: 400;
-            font-size: 1.2rem;
-        }
-
-        &-pricebox {
-            display: flex;
-            align-items: center;
-            color: $color-primary;            
-        }
-
-        &-price {
-            font-size: 2.2rem; 
-            font-weight: 900;            
-            margin-left: 2rem;
-            &-icon {
-                height: 2rem;
-                width: 2rem;
-                & path{
-                    fill: currentColor;
-                }
-
-            }
-        }
-
+    &-front {
+      width: 6rem;
+      height: 6rem;
+      background: $color-primary;
+      transform: rotate(45deg);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
     }
 
-    &__right {
-        display: flex;
-        background-color: #fff;
-        justify-content: center;
-        flex-direction: column; 
-        align-items: center;
-        height: 10rem;
-        flex: 1 1; 
-        @media only screen and (max-width: 900px){
-            width: 100%;
-            margin: 0 auto;
-        
-        }
-        &-heading {
-            font-size: 1.6rem;
-            span {
-                color: $color-primary; 
-            }
-        }
+    &-back {
+      width: 6rem;
+      height: 6rem;
+      background: $color-primary;
+      position: absolute;
+      filter: brightness(90%);
+      transform: rotate(45deg) translate(-.5rem, .5rem);
+    }
+  }
 
-        &-subheading {
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-        }
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      height: 20rem;
     }
 
+    @media only screen and(max-width: 450px) {
+      height: auto;
+    }
+  }
+
+  &__left {
+    display: flex;
+    width: 67rem;
+    background: #fff;
+    align-items: center;
+    height: 10rem;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 3rem;
+
+    @media only screen and (max-width: 900px) {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+    }
+
+    @media only screen and(max-width: 450px) {
+      flex-direction: column;
+      height: auto;
+
+      &>* {
+        margin: 1rem auto;
+      }
+    }
+
+    &-headingbox {
+      padding-right: 3rem;
+      border-right: 1px solid #ccc;
+
+      @media only screen and(max-width: 450px) {
+        margin-right: none;
+        border-right: none;
+        border-top: 1px solid #ccc;
+        padding-top: 2rem;
+        text-align: center;
+      }
+    }
+
+    &-heading {
+      font-weight: 900;
+      font-size: 2.2rem;
+    }
+
+    &-subheading {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    &-pricebox {
+      display: flex;
+      align-items: center;
+      color: $color-primary;
+    }
+
+    &-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-left: 2rem;
+
+      &-icon {
+        height: 2rem;
+        width: 2rem;
+
+        & path {
+          fill: currentColor;
+        }
+
+      }
+    }
+
+  }
+
+  &__right {
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+    flex: 1 1;
+
+    @media only screen and (max-width: 900px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &-heading {
+      font-size: 1.6rem;
+
+      span {
+        color: $color-primary;
+      }
+    }
+
+    &-subheading {
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+    }
+  }
 }

@@ -6,9 +6,11 @@ import {getProducts} from '../../store/actions/products';
 import PropTypes from 'prop-types'; 
 
 const Home = ({getProducts}) => {
+  
   useEffect(()=>{
     getProducts()
   }, [getProducts])
+
   return (
   <main className="main">
     <Banner />

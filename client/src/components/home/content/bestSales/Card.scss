@@ -1,4 +1,4 @@
-@import '../../../../Variables.scss'; 
+@import '../../../../Variables.scss';
 
 .sales {
   &__wrapper {
@@ -45,9 +45,11 @@
     &-item {
       transition: all .5s;
       width: 100%;
-      &-stars{
+
+      &-stars {
         display: flex;
       }
+
       &:hover &-stats-front {
         visibility: hidden;
       }
@@ -70,7 +72,6 @@
 
       @media only screen and (max-width: 768px) {
         width: 35rem;
-
       }
 
       @media only screen and (max-width: 450px) {
@@ -89,7 +90,6 @@
         height: auto;
         background: #fff;
         font-family: 'HarmoniaSansProCyr';
-      
 
         @media only screen and (max-width: 1200px) {
           padding: 1rem;
@@ -112,7 +112,6 @@
 
       &-img {
         height: 9rem;
-
       }
 
       &-line {

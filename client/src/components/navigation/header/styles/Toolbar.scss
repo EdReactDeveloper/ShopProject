@@ -1,41 +1,46 @@
 @import '../../../../Variables.scss';
 
-.toolbar{
-  &__list{
+.toolbar {
+  &__list {
     display: flex;
     align-items: center;
+
     @media (max-width: 900px) {
       width: 50%;
       justify-content: space-around;
     }
+
     @media (max-width: 900px) {
       width: 90%;
-
     }
   }
-  &__item{
+
+  &__item {
     display: flex;
     align-items: center;
     margin-left: 1rem;
-    transition: all .3s; 
-    &:hover{
+    transition: all .3s;
+
+    &:hover {
       color: $color-primary
     }
 
-    &-icon{
+    &-icon {
       height: 2.5rem;
       width: 2.5rem;
       margin-top: 1rem;
-      & path{
+
+      & path {
         fill: #666
-      }  
+      }
+
       transition: all 0.5s;
-      &:hover{
-        & path{
+
+      &:hover {
+        & path {
           fill: $color-primary
         }
       }
     }
   }
-
 }

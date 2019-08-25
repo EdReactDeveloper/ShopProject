@@ -1,16 +1,17 @@
 .product {
   &-list {
-     display: grid; 
-     grid-template-columns: 1fr 1fr 1fr 1fr; 
-     grid-gap: 2rem;
-      width: 100%;
-      margin-bottom: 4rem;
-     @media only screen and (max-width: 900px){
-         grid-template-columns: 1fr 1fr; 
-     }
-     @media screen and(max-width: 450px) {
-         grid-gap: .5rem;
-         
-     }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    @media only screen and (max-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and(max-width: 450px) {
+      grid-gap: .5rem;
+    }
   }
 }
