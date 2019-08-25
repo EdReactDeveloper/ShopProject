@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getProducts } from '../../store/actions/products';
 import Card from '../ui/product/card/index';
-import './catalog.scss';
+import './Catalog.scss';
 import PropTypes from 'prop-types';
 import Loader from '../ui/loader';
 

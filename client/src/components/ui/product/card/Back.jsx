@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 const Cardback = ({ item }) => {
-	
 	let sizes = item.sizes.map((item, i) => (
 		<div style={{ color: item ? 'orange' : '' }} className="card-back-size-wrapper" key={i}>
 			<label className="card-back-size-label">{item}</label>
