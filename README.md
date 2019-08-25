@@ -1,6 +1,6 @@
 <div>
 <h2>ShopProject</h2>
-<div> shop based on React.js + express + mongodb </div>
+<div> shop based on React/Redux + express + mongodb </div>
 <div> The app is initialized with create-react-app </div>
 <h3>to strart the project in dev mode run: npm run dev</h3>
 <div>
