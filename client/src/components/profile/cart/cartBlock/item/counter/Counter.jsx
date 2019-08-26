@@ -20,7 +20,9 @@ const Counter = ({ cart: { cart }, index, id, counter }) => {
 				<button className="counter__btn" disabled={quantity < 2} onClick={() => countHandler('down')}>
 					-
 				</button>
-				<input type="number" value={quantity} onChange={e => inputHandler(e)} className="counter__display" />
+				<form className="counter__form">
+					<input type="number" value={quantity} onChange={e => inputHandler(e)} className="counter__display" />
+				</form>
 				<button className="counter__btn" onClick={() => countHandler('up')}>
 					+
 				</button>

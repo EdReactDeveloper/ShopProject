@@ -15,7 +15,7 @@ const SalesCard = ({ item }) => {
   return (
     <li className="sales__product-item">
       <Link to={`/products/${_id}`} className="sales__product-item-front">
-        <img src={images[0]} alt="is missing" className="sales__product-item-img" />
+        <img src={images[0]} alt={heading} className="sales__product-item-img" />
         <div className="sales__product-item-line" />
         <div className="sales__product-item-infobox">
           <h3 className="sales__product-item-infobox-heading">{title}</h3>

@@ -5,6 +5,7 @@ import './NewsLetter.scss';
 import { FormattedMessage } from 'react-intl';
 
 const newsLetter = () => {
+
   return (
     <section className="newsLetter__wrapper">
       <div className="newsLetter__left">
@@ -15,7 +16,7 @@ const newsLetter = () => {
           <FormattedMessage id="joinUsNews" defaultMessage="join us now to get all news and special offers" />
         </span>
       </div>
-      <div className="newsLetter__right">
+      <form className="newsLetter__right">
         <div className="newsLetter__mail">
           <Icon d={Contact.mail} className="newsLetter__icon" />
           <input className="newsLetter__mail-input" placeholder="type your email here" type="text" />
@@ -23,7 +24,7 @@ const newsLetter = () => {
         <button className="newsLetter__button">
           <FormattedMessage id="joinus" defaultMessage="join us" />{' '}
         </button>
-      </div>
+      </form>
     </section>
   );
 };
