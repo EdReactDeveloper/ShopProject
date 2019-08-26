@@ -1,0 +1,127 @@
+@import '../../../../../Variables.scss';
+
+.card {
+  &-back {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    background: #fff;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+
+    @media only screen and (max-width: 1000px) {
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+      transform: rotateY(0);
+      grid-template-rows: 5rem repeat(6, 1fr);
+      padding: 2rem 3rem;
+    }
+
+    @media screen and(max-width: 450px) {
+      padding: 1rem;
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 0;
+    }
+
+    &-image {
+      height: 100%;
+      grid-row: 1 / 5;
+
+      @media screen and(max-width: 450px) {
+        grid-row: 1 /3;
+      }
+    }
+
+    &-heading {
+      color: $color-primary;
+      font-size: 1.4rem;
+    }
+
+    &-size {
+      font-size: 1.4rem;
+      display: flex;
+      width: 70%;
+      justify-content: center;
+      text-transform: lowercase;
+
+      @media screen and(max-width: 450px) {
+        display: none;
+      }
+
+
+      &-wrapper {
+        &:last-child>span {
+          display: none;
+        }
+
+        span {
+          margin: 0 .5rem;
+        }
+
+        &:first-child {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &-colorswrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &-color {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      margin: 0 .3rem;
+
+      @media screen and(max-width: 450px) {
+        display: none;
+      }
+    }
+
+    &-price {
+      display: none;
+      margin: 0 auto;
+      margin-top: 1rem;
+      color: $color-primary;
+      font-weight: 700;
+      font-size: 2rem;
+
+      @media only screen and (max-width: 900px) {
+        display: block;
+        grid-row: 8/9;
+        margin: 0;
+      }
+
+      @media screen and(max-width: 450px) {
+        grid-row: 7/8;
+      }
+    }
+  }
+
+  &-iconbox {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    grid-row: 7/9;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    @media screen and(max-width: 900px) {
+      grid-row: 7/8;
+      padding-top: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media screen and(max-width: 450px) {
+      display: none;
+    }
+  }
+}

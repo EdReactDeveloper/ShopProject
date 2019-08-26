@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './alert.scss';
+import './Alert.scss';
 import PropTypes from 'prop-types';
 
 const Alert = ({ alerts }) =>

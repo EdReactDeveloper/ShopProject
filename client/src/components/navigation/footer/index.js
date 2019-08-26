@@ -1,14 +1,14 @@
 import React from 'react';
-import Logo from './Logo';
-import List from './List';
-import Payment from './Payment';
-import './styles/Footer.scss';
+import LogoBlock from './logoBlock/LogoBlock';
+import List from './list/List';
+import Payment from './payment/Payment';
+import './Footer.scss';
 
 const Footer = () => {
 	return (
 		<footer className="footer">
 			<div className="footer__wrapper container">
-				<Logo />
+				<LogoBlock />
 				<List />
 				<Payment />
 			</div>

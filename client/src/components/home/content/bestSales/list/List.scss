@@ -1,0 +1,14 @@
+.sales{
+  &__product_list{
+    display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      width: 100%;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: 40rem;
+        justify-content: center;
+        grid-row-gap: 1rem;
+      }
+  }
+}

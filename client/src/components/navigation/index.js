@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import './ContentWrapper.scss';
 
 const Navigation = props => {
-  return (
-    <main className="wrapper">
-      <Header />
-      {props.children}
-      <Footer />
-    </main>
-  );
+	return (
+		<div className="wrapper">
+			<Header />
+			<main className="content__wrapper">{props.children}</main>
+			<Footer />
+		</div>
+	);
 };
 
 export default Navigation;

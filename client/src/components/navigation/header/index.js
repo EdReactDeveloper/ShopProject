@@ -1,13 +1,13 @@
 import React from 'react';
-import HeaderBottom from './headerBottom';
-import './styles/Header.scss';
-import Contacts from './Contacts';
+import Navigation from './navigation';
+import './Header.scss';
+import Contacts from './contacts/Contacts';
 
 const Header = () => {
   return (
     <header className="header">
       <Contacts />
-      <HeaderBottom />
+      <Navigation />
     </header>
   );
 };

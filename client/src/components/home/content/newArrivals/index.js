@@ -1,7 +1,7 @@
 import React from 'react';
-import Promos from './promos';
-import Heading from '../../../ui/misc/Heading';
-import ProductList from '../../../ui/product/ProductBlock';
+import Promos from './promos/Promos';
+import Heading from '../../../ui/misc/heading/Heading';
+import ProductList from '../../../ui/product/productBlock/ProductBlock';
 
 const NewArrivals = () => {
   return (

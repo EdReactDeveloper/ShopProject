@@ -1,0 +1,9 @@
+.orders {
+  &__order_item {
+    &_heading {
+      @media only screen and (max-width: 700px) {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

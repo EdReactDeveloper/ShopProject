@@ -1,7 +1,7 @@
 import React from 'react';
-import Front from './Front';
-import Back from './Back';
-import '../styles/Card.scss';
+import Front from './front/Front';
+import Back from './back/Back';
+import './Card.scss';
 import PropTypes from 'prop-types';
 
 const ProductCard = ({ item }) => {

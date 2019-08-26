@@ -1,7 +1,8 @@
 import React from 'react';
-import Image from './Image';
-import Description from './Description';
+import Image from './image/Image';
+import Description from './description/Description';
 import PropTypes from 'prop-types';
+import './CardBlock.scss'; 
 
 const Product = ({ product, cart, auth }) => {
   return (

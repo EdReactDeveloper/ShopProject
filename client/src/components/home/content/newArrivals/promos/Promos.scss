@@ -1,55 +1,6 @@
 @import '../../../../../Variables.scss';
 
 .promos {
-  &__icon {
-    &-wrapper {
-      position: relative;
-      width: 10rem;
-      height: 10rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &-heading {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transform: rotate(-45deg);
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.8rem;
-
-      span {
-        font-weight: 400;
-        font-size: 1.2rem;
-      }
-    }
-
-    &-front {
-      width: 6rem;
-      height: 6rem;
-      background: $color-primary;
-      transform: rotate(45deg);
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 5;
-    }
-
-    &-back {
-      width: 6rem;
-      height: 6rem;
-      background: $color-primary;
-      position: absolute;
-      filter: brightness(90%);
-      transform: rotate(45deg) translate(-.5rem, .5rem);
-    }
-  }
-
   &__wrapper {
     display: flex;
     width: 100%;

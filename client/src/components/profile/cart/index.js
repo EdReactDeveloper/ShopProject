@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import { getCart, sendOrder } from '../../../store/actions/cart';
-import '../styles/Cart.scss';
-import CartEmpty from './CartEmpty';
-import Cart from './Cart';
+import CartEmpty from './cartEmpty/CartEmpty';
+import Cart from './cartBlock/CartBlock';
 import PropTypes from 'prop-types'; 
 import Loader from '../../ui/loader';
 

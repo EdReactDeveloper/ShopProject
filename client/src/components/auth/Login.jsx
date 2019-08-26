@@ -35,7 +35,7 @@ const Login = ({ login, setAlert, history }) => {
       <label htmlFor="password" className="login__label">
         <FormattedMessage id="password" defaultMessage="password" />
       </label>
-      <input className="login__input" type="text" name="password" onChange={e => onChange(e)} />
+      <input type="password" className="login__input" name="password" onChange={e => onChange(e)} />
       <button className="login__button">
         {' '}
         <FormattedMessage id="login" defaultMessage="login" />

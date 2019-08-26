@@ -1,0 +1,54 @@
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchSize } from '../../../../../store/actions/cart';
+import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+import './Sizes.scss';
+
+const Sizes = ({ sizes, fetchSize }) => {
+  const [sizeData, setSize] = useState({
+    index: 0
+  });
+
+  const { index } = sizeData;
+
+  useEffect(
+    () => {
+      setSize({ index: 0 });
+      fetchSize(sizes[0].join(''));
+    },
+    [sizes, fetchSize]
+  );
+
+  const sizeHandler = i => {
+    setSize({ index: i });
+    fetchSize(sizes[i].join(''));
+  };
+
+  let sizesList = sizes.map((item, i) => (
+    <div
+      style={{ background: item }}
+      className={`size__item ${i === index && 'size__selected'}`}
+      onClick={() => sizeHandler(i)}
+      key={item}
+    >
+      {item}
+    </div>
+  ));
+  
+  return (
+    <div className="size__wrapper">
+      <span className="size__label">
+        <FormattedMessage id="size" defaultMessage="Size" />
+      </span>
+      <div className="size__list">{sizesList}</div>
+    </div>
+  );
+};
+
+Sizes.propTypes = {
+  fetchSize: PropTypes.func.isRequired,
+  sizes: PropTypes.array.isRequired
+};
+
+export default connect(null, { fetchSize })(Sizes);

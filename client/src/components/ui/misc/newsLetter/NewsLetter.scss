@@ -1,0 +1,127 @@
+@import '../../../../Variables.scss';
+
+.newsLetter {
+
+  &__wrapper {
+    display: flex;
+    height: 12rem;
+    width: 100%;
+    background: #fff;
+    justify-content: space-around;
+    margin: 8rem auto;
+    box-sizing: border-box;
+
+    @media only screen and (max-width: 900px) {
+      &>* {
+        padding: 0 2rem;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media only screen and (max-width: 500px) {
+      height: 20rem;
+      flex-direction: column;
+      padding: 1rem;
+      box-sizing: border-box;
+      margin: 4px auto;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+      height: 50%;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    span {
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+      height: 50%;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-right: 2rem;
+  }
+
+  &__mail {
+    display: flex;
+    align-items: center;
+
+    &-input {
+      outline: none;
+      border: none;
+      font-style: italic;
+      color: #666;
+
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+
+    & path {
+      fill: $color-primary;
+    }
+  }
+
+  &__button {
+    margin-left: 16rem;
+    font-size: 1.4rem;
+    height: 5rem;
+    width: 10rem;
+    color: #fff;
+    background: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      box-shadow: none;
+      border: 2px solid #ccc;
+    }
+
+    @media only screen and (max-width: 500px) {
+      margin: 0 auto;
+    }
+  }
+}

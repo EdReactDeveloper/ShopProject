@@ -1,0 +1,36 @@
+@import '../../../../../Variables.scss';
+
+.card {
+  &-front {
+    background: #fff;
+    display: grid;
+    grid-auto-rows: 70% 20% 10%;
+    justify-items: center;
+    align-items: center;
+
+    &-image {
+      height: 90%;
+      max-width: 90%;
+    }
+
+    &-heading {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 2rem;
+    }
+
+    &-price {
+      color: $color-primary;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+}

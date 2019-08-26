@@ -1,0 +1,59 @@
+@import '../../../../Variables.scss';
+
+.productImage {
+  &__left {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 32rem;
+    margin-right: 2rem;
+
+    @media only screen and (max-width: 768px) {
+      align-items: center;
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+
+    &-img--wrapper {
+      height: 28rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 7rem;
+
+      @media only screen and (max-width: 768px) {
+        height: 20rem;
+      }
+    }
+
+    &-img {
+      height: 100%;
+    }
+
+    &-tmbbox {
+      display: flex;
+      height: 7rem;
+      justify-content: center;
+    }
+
+    &-tmbwrapper {
+      height: 100%;
+      width: 9.5rem;
+      border: none;
+      background: #ccc;
+      outline: none;
+      cursor: pointer;
+
+      @media only screen and (max-width: 768px) {
+        width: 7rem;
+      }
+    }
+
+    &-tmb {
+      height: 50%;
+    }
+
+    &-selected {
+      background: $color-primary;
+    }
+  }
+}

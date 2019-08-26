@@ -1,38 +1,40 @@
-.login{
-  &__form{
+.login {
+  &__form {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: space-around;
-    padding: 2rem; 
-    border: 1px solid #ccc; 
+    background: #fff;
     width: 50%;
+    padding: 2rem;
     margin: 0 auto;
+    transform: translateY(5rem);
+    border: 1px solid #ccc;
 
     @media only screen and (max-width: 500px) {
       width: 90%;
     }
   }
 
-  &__label{
+  &__label {
     font-size: 1.8rem;
-    color: #666; 
+    color: #666;
   }
 
-  &__input{
+  &__input {
     width: 90%;
-    border: 1px solid #ccc; 
-    padding: 1rem; 
-    outline: none; 
+    border: 1px solid #ccc;
+    padding: 1rem;
+    outline: none;
 
   }
 
-  &__button{
-    border: 1px solid #ccc; 
-    background: #fff; 
-    padding: 1rem; 
+  &__button {
     display: block;
+    background: #fff;
     width: 20%;
+    padding: 1rem;
     margin-top: 2rem;
+    border: 1px solid #ccc;
     cursor: pointer;
   }
 }

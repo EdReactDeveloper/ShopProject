@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getOrders } from '../../../store/actions/cart';
-import Order from './Order';
-import '../styles/Orders.scss';
+import Order from './order/Order';
 import PropTypes from 'prop-types';
 import Loader from '../../ui/loader';
 const Orders = ({ getOrders, orders: { orders, loading } }) => {

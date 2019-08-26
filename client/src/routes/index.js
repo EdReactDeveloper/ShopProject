@@ -17,7 +17,7 @@ import PropTypes from 'prop-types';
 
 const Routes = ({ loading }) => {
   return (
-    <div>
+    <>
       {!loading && (
         <Router>
           <Navigation>
@@ -35,7 +35,7 @@ const Routes = ({ loading }) => {
           </Navigation>
         </Router>
       )}
-    </div>
+    </>
   );
 };
 

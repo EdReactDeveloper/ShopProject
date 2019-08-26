@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import Product from './CardBlock';
+import CardBlock from './cardBlock';
 import { connect } from 'react-redux';
 import { findProductById } from '../../store/actions/products';
-import './styles/product.scss';
 import { getCart } from '../../store/actions/cart';
 import PropTypes from 'prop-types'; 
 import Loader from '../ui/loader'; 
@@ -22,13 +21,13 @@ const ProductPage = ({ getCart, products: { product, loading }, auth: {isAuthent
     [findProductById, isAuthenticated, getCart, match]
   );
   return (
-    <div className="productPaged">
+    <article className="productPage">
       {product && cart && !loading ? (
-        <Product product={product} cart={cart} auth={auth} />
+        <CardBlock product={product} cart={cart} auth={auth} />
       ) : (
         <Loader />
       )}
-    </div>
+    </article>
   );
 };
 

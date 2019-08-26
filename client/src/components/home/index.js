@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Banner from './Banner';
+import Banner from './banner/Banner';
 import Content from './content';
 import { connect } from 'react-redux';
 import { getProducts } from '../../store/actions/products';
