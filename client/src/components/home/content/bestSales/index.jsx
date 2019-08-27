@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsLetter from '../../../ui/misc/newsLetter/NewsLetter';
 import Heading from '../../../ui/misc/heading/Heading';
-import List from '../bestSales/list/List';
+import List from './list/List';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './BestSales.scss'; 

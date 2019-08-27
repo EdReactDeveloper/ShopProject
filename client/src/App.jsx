@@ -14,7 +14,7 @@ const messages = {
   en: messages_en
 };
 const language = navigator.language.split(/[-_]/)[0];
-function App() {
+const App = () =>{
   useEffect(() => {
     store.dispatch(getUser());
   }, []);
