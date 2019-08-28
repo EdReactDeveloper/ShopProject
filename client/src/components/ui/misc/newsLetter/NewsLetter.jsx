@@ -1,8 +1,8 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Icon from '../../icon/Icon';
 import { Contact } from '../../icon/Selection';
 import './NewsLetter.scss';
-import { FormattedMessage } from 'react-intl';
 
 const newsLetter = () => {
 
@@ -21,8 +21,8 @@ const newsLetter = () => {
           <Icon d={Contact.mail} className="newsLetter__icon" />
           <input className="newsLetter__mail-input" placeholder="type your email here" type="text" />
         </div>
-        <button className="newsLetter__button">
-          <FormattedMessage id="joinus" defaultMessage="join us" />{' '}
+        <button type="button" className="newsLetter__button">
+          <FormattedMessage id="joinus" defaultMessage="join us" />
         </button>
       </form>
     </section>

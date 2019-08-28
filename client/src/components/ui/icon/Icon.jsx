@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SVG = ({ style = {}, fill = '#000', width = '100%', className = '', size = '24', sizeX = '0', d, clicked }) => (
+const SVG = ({ style, fill, width, className, size, sizeX, d, clicked }) => (
   <svg
     aria-hidden="true"
     width={width}
@@ -19,12 +19,24 @@ const SVG = ({ style = {}, fill = '#000', width = '100%', className = '', size =
 
 SVG.propTypes = {
   d: PropTypes.string.isRequired,
-  style: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
   fill: PropTypes.string,
   width: PropTypes.string,
   className: PropTypes.string,
-  viewBox: PropTypes.string,
+  size: PropTypes.string,
+  sizeX: PropTypes.string,
   clicked: PropTypes.func
 };
+
+SVG.defaultProps = {
+  style: {},
+  fill: '#000',
+  width: '100%',
+  size: '24',
+  sizeX: '0',
+  className: '',
+  clicked: null
+}
 
 export default SVG;

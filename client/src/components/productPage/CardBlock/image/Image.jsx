@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './Image.scss';
 import PropTypes from 'prop-types';
+import uuid from 'uuid'
+import './Image.scss';
 import Loader from '../../../ui/loader';
 
 const ImageComponent = ({ images }) => {
@@ -22,11 +23,12 @@ const ImageComponent = ({ images }) => {
     setImage({ image: images[i], index: i });
   };
 
-  let imageList = images.map((item, i) => (
+  const imageList = images.map((item, i) => (
     <button
+      type="button"
       className={`productImage__left-tmbwrapper ${i === index ? 'productImage__left-selected' : ''}`}
       onClick={() => chooseImage(i)}
-      key={i}
+      key={uuid.v4()}
     >
       <img src={item} alt="is missing" className="productImage__left-tmb" />
     </button>
@@ -37,11 +39,7 @@ const ImageComponent = ({ images }) => {
       <div className="productImage__left-img--wrapper">
         {images ? (
           <img src={image} alt="is missing" className="productImage__left-img" />
-        ) : (
-          <div>
-            <Loader />
-          </div>
-        )}
+        ) : ( <div><Loader /></div> )}
       </div>
       <div className="productImage__left-tmbbox">{imageList}</div>
     </section>
@@ -49,7 +47,7 @@ const ImageComponent = ({ images }) => {
 };
 
 ImageComponent.propTypes = {
-  images: PropTypes.array.isRequired
+  images: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string.isRequired).isRequired).isRequired
 };
 
 export default ImageComponent;

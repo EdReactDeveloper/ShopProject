@@ -6,7 +6,8 @@
   }
 
   &__label {
-    margin-right: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   &__list {
@@ -21,14 +22,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
-
+    margin-left: 1rem;
     background: #fff;
     cursor: pointer;
     border: 1px solid #ccc;
+    outline: none;
   }
 
   &__selected {

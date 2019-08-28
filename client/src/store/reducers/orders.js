@@ -9,27 +9,27 @@ const initialState = {
 export default function(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case ORDER_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        order: payload
-      };
-    case GET_ORDERS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        orders: payload
-      };
-    case ORDER_FAIL:
-    case GET_ORDERS_FAIL:
-      return {
-        ...state,
-        loading: false,
-        order: null,
-        orders: []
-      };
-    default:
-      return state;
+  case ORDER_SUCCESS:
+    return {
+      ...state,
+      loading: false,
+      order: payload
+    };
+  case GET_ORDERS_SUCCESS:
+    return {
+      ...state,
+      loading: false,
+      orders: payload
+    };
+  case ORDER_FAIL:
+  case GET_ORDERS_FAIL:
+    return {
+      ...state,
+      loading: false,
+      order: null,
+      orders: []
+    };
+  default:
+    return state;
   }
 }

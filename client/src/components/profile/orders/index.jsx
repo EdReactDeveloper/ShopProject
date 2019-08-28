@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getOrders } from '../../../store/actions/cart';
 import Order from './order/Order';
-import PropTypes from 'prop-types';
 import Loader from '../../ui/loader';
+
 const Orders = ({ getOrders, orders: { orders, loading } }) => {
   useEffect(
     () => {
@@ -12,7 +13,8 @@ const Orders = ({ getOrders, orders: { orders, loading } }) => {
     [getOrders]
   );
 
-  let ordersList = orders.reverse().map(item => <Order item={item} key={item._id} />);
+  const ordersList = orders.reverse().map(item => <Order item={item} key={item._id} />);
+
 
   return <div className="orders__wrapper container">{orders && !loading ? ordersList : <Loader />}</div>;
 };
@@ -23,8 +25,12 @@ const mapStateToProps = state => ({
 
 Orders.propTypes = {
   getOrders: PropTypes.func.isRequired,
-  orders: PropTypes.object.isRequired,
-  loading: PropTypes.bool
+  orders: PropTypes.shape(
+    {
+      orders: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+      loading: PropTypes.bool.isRequired
+    }
+  ).isRequired,
 };
 
 export default connect(mapStateToProps, { getOrders })(Orders);

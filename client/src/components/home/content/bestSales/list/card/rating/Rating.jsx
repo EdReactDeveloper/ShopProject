@@ -1,16 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import uuid from 'uuid'
 import { Product } from '../../../../../../ui/icon/Selection';
 import Icon from '../../../../../../ui/icon/Icon';
-import PropTypes from 'prop-types';
 import './Rating.scss'; 
 
 const Rating = ({ stars }) => {
-  let arr = [];
-  for (let i = 0; i < stars; i++) {
+  const arr = [];
+  for (let i = 0; i < stars; i+=1) {
     arr.push(Product.star);
   }
-
-  let starList = arr.map((item, i) => <Icon d={item} className="sales__product-icon" key={i} />);
+  const starList = arr.map((item) => <Icon d={item} className="sales__product-icon" key={uuid.v4()} />);
 
   return <div className="sales__product-item-stars">{starList}</div>;
 };

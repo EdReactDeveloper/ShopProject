@@ -1,16 +1,16 @@
 import React from 'react';
-import Icon from '../../../../../ui/icon/Icon';
-import { Product } from '../../../../../ui/icon/Selection';
 import { Link } from 'react-router-dom';
-import './Card.scss';
-import Rating from './rating/Rating';
-import { formatTitle } from '../../../../../ui/misc/formatText';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import Icon from '../../../../../ui/icon/Icon';
+import { Product } from '../../../../../ui/icon/Selection';
+import './Card.scss';
+import Rating from './rating/Rating';
+import formatTitle from '../../../../../ui/misc/formatText';
 
 const SalesCard = ({ item }) => {
   const { _id, heading, images, rating } = item;
-  let title = formatTitle(heading);
+  const title = formatTitle(heading);
 
   return (
     <li className="sales__product-item">
@@ -37,11 +37,14 @@ const SalesCard = ({ item }) => {
   );
 };
 SalesCard.propTypes = {
-  item: PropTypes.object,
-  _id: PropTypes.string,
-  heading: PropTypes.string,
-  imgaes: PropTypes.string,
-  rating: PropTypes.number
+  item: PropTypes.shape(
+    {
+      _id: PropTypes.string.isRequired,
+      heading: PropTypes.string.isRequired,
+      images: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string).isRequired).isRequired,
+      rating: PropTypes.number.isRequired
+    }
+  ).isRequired,
 };
 
 export default SalesCard;

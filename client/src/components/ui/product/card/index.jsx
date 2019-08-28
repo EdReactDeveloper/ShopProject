@@ -1,22 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Card from '../card';
-import './ProductBlock.scss';
+import Front from './front/Front';
+import Back from './back/Back';
+import './Card.scss';
 
-const Products = ({ products }) => {
-  
-  const productsList = products && products.slice(0, 4).map(item => <Card key={item._id} item={item} />);
+const ProductCard = ({ item }) => {
+  const scrollup = () => {
+    window.scrollTo(0, 200);
+  };
 
-  return <ul className="product-list">{productsList}</ul>;
+  return (
+    <li className="card" onChange={scrollup}>
+      <Front item={item} />
+      <Back item={item} />
+    </li>
+  );
 };
 
-const mapStateToProps = state => ({
-  products: state.products.products
-});
-
-Products.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape(
+ProductCard.propTypes = {
+  item: PropTypes.shape(
     {
       colors: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
       sizes: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
@@ -27,8 +29,7 @@ Products.propTypes = {
       images: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
       price: PropTypes.number.isRequired,
       rating: PropTypes.number.isRequired
-    }
-  )).isRequired
+    }).isRequired,
 };
 
-export default connect(mapStateToProps)(Products);
+export default ProductCard;

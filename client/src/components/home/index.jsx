@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Banner from './banner/Banner';
 import Content from './content';
-import { connect } from 'react-redux';
 import { getProducts } from '../../store/actions/products';
-import PropTypes from 'prop-types';
 
 const Home = ({ getProducts }) => {
   useEffect(

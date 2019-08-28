@@ -28,12 +28,14 @@ const banner = () => {
             </div>
             <div className="banner-pricebox">
               <div className="banner-price">
-                <FormattedMessage id="price" defaultMessage="price" />: $120
+                <FormattedMessage id="price" defaultMessage="price" />
+                : $120
               </div>
               <div className="banner-order">
                 <Icon d={NavIcon.basket} className="banner-icon" />
                 <Link className="banner-order-text" to="/products/5d2a3ccdf6ab9c2654a8dd88">
-                  <FormattedMessage id="orderNow" defaultMessage="order now" />:
+                  <FormattedMessage id="orderNow" defaultMessage="order now" />
+                  :
                 </Link>
               </div>
             </div>

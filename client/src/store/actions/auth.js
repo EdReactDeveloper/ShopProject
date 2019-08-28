@@ -1,8 +1,9 @@
-import { AUTH_SUCCESS, AUTH_FAIL, USER_LOADED, LOGOUT_SUCCESS } from './types';
 import axios from 'axios';
-import { setAlert } from './alert';
+import { AUTH_SUCCESS, AUTH_FAIL, USER_LOADED, LOGOUT_SUCCESS } from './types';
+import setAlert from './alert';
 
 export const getUser = () => async dispatch => {
+
   try {
     const res = await axios.get('/api/users/');
     dispatch({
@@ -17,6 +18,7 @@ export const getUser = () => async dispatch => {
 };
 
 export const register = (email, password, history) => async dispatch => {
+
   const config = { headers: { 'Content-Type': 'application/json' } };
   const body = JSON.stringify({ email, password });
 
@@ -25,7 +27,7 @@ export const register = (email, password, history) => async dispatch => {
     dispatch(setAlert('user created! now log in the syster', 'success'));
     history.push('/login');
   } catch (error) {
-    const errors = error.response.data.errors;
+    const {errors} = error.response.data;
 
     if (errors) errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     dispatch({
@@ -35,6 +37,7 @@ export const register = (email, password, history) => async dispatch => {
 };
 
 export const login = (email, password, history) => async dispatch => {
+
   const config = { headers: { 'Content-Type': 'application/json' } };
   const body = JSON.stringify({ email, password });
 
@@ -46,7 +49,7 @@ export const login = (email, password, history) => async dispatch => {
     });
     history.push('/');
   } catch (error) {
-    const errors = error.response.data.errors;
+    const {errors} = error.response.data;
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }
@@ -57,6 +60,7 @@ export const login = (email, password, history) => async dispatch => {
 };
 
 export const logout = () => async dispatch => {
+  
   try {
     await axios.post('/api/users/logout');
     dispatch({

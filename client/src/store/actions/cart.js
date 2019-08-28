@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   CART_SUCCESS,
   CART_FAIL,
@@ -9,10 +10,27 @@ import {
   GET_ORDERS_SUCCESS,
   GET_ORDERS_FAIL
 } from './types';
-import axios from 'axios';
-import { setAlert } from './alert';
+import setAlert from './alert';
+
+
+export const getCart = () => async dispatch => {
+  
+  try {
+    const res = await axios.get('/api/shop/cart');
+    dispatch({
+      type: CART_SUCCESS,
+      payload: res.data
+    });
+    return res.data;
+  } catch (error) {
+    dispatch({
+      type: CART_FAIL
+    });
+  }
+};
 
 export const addToCart = (id, color, size, price) => async dispatch => {
+
   const config = { headers: { 'Content-Type': 'application/json' } };
   const body = JSON.stringify({ id, color, size, price });
 
@@ -32,22 +50,8 @@ export const addToCart = (id, color, size, price) => async dispatch => {
   }
 };
 
-export const getCart = () => async dispatch => {
-  try {
-    const res = await axios.get('/api/shop/cart');
-    dispatch({
-      type: CART_SUCCESS,
-      payload: res.data
-    });
-    return res.data;
-  } catch (error) {
-    dispatch({
-      type: CART_FAIL
-    });
-  }
-};
-
 export const removeFromCart = id => async dispatch => {
+
   const config = { headers: { 'Content-Type': 'application/json' } };
   const body = JSON.stringify({ id });
 
@@ -62,6 +66,7 @@ export const removeFromCart = id => async dispatch => {
 };
 
 export const fetchColor = color => dispatch => {
+
   dispatch({
     type: FETCH_COLOR,
     payload: color
@@ -83,6 +88,7 @@ export const counter = (quantity, id) => dispatch => {
 };
 
 export const sendOrder = (cart, history) => async dispatch => {
+
   const config = { headers: { 'Content-Type': 'application/json' } };
   const body = JSON.stringify({ cart });
 
@@ -101,6 +107,7 @@ export const sendOrder = (cart, history) => async dispatch => {
 };
 
 export const getOrders = () => async dispatch => {
+
   try {
     const res = await axios('/api/order/get');
     dispatch({

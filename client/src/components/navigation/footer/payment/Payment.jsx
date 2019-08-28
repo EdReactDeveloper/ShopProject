@@ -1,7 +1,7 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import cards from '../../../../assests/payment.png';
 import './Payment.scss';
-import { FormattedMessage } from 'react-intl';
 
 const Payment = () => {
   return (

@@ -1,16 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from './header';
 import Footer from './footer';
 import './ContentWrapper.scss';
 
-const Navigation = props => {
-	return (
-		<div className="wrapper">
-			<Header />
-			<main className="content__wrapper">{props.children}</main>
-			<Footer />
-		</div>
-	);
+const Navigation = ({ children }) => {
+  return (
+    <div className="wrapper">
+      <Header />
+      <main className="content__wrapper">{children}</main>
+      <Footer />
+    </div>
+  );
 };
+
+Navigation.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+}
 
 export default Navigation;

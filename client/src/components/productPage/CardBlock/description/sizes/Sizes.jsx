@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchSize } from '../../../../../store/actions/cart';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { fetchSize } from '../../../../../store/actions/cart';
 import './Sizes.scss';
 
 const Sizes = ({ sizes, fetchSize }) => {
+  
   const [sizeData, setSize] = useState({
     index: 0
   });
@@ -25,30 +26,32 @@ const Sizes = ({ sizes, fetchSize }) => {
     fetchSize(sizes[i].join(''));
   };
 
-  let sizesList = sizes.map((item, i) => (
-    <div
+  const sizesList = sizes.map((item, i) => (
+    <input
       style={{ background: item }}
+      type="button"
       className={`size__item ${i === index && 'size__selected'}`}
       onClick={() => sizeHandler(i)}
       key={item}
-    >
-      {item}
-    </div>
+      value={item}
+    />
   ));
-  
+
   return (
     <div className="size__wrapper">
-      <span className="size__label">
-        <FormattedMessage id="size" defaultMessage="Size" />
-      </span>
-      <div className="size__list">{sizesList}</div>
+      <div className="size__list">
+        <label htmlFor="size" className="size__label">
+          <FormattedMessage id="size" defaultMessage="Size" />
+          {sizesList}
+        </label>
+      </div>
     </div>
   );
 };
 
 Sizes.propTypes = {
   fetchSize: PropTypes.func.isRequired,
-  sizes: PropTypes.array.isRequired
+  sizes: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string.isRequired)).isRequired
 };
 
 export default connect(null, { fetchSize })(Sizes);

@@ -1,11 +1,10 @@
 import React from 'react';
-import Item from './item/Item';
 import PropTypes from 'prop-types';
+import Item from './item/Item';
 import './Order.scss'; 
 
 const OrdersItem = ({ item }) => {
-  
-  let orderItems = item.products.map(product => {
+  const orderItems = item.products.map(product => {
     return <Item product={product} key={product._id} />;
   });
 
@@ -13,7 +12,20 @@ const OrdersItem = ({ item }) => {
 };
 
 OrdersItem.propTypes = {
-  item: PropTypes.object.isRequired
+  item: PropTypes.shape(
+    {
+      products: PropTypes.arrayOf(PropTypes.shape({
+        color: PropTypes.string.isRequired, 
+        productId: PropTypes.string.isRequired, 
+        quantity: PropTypes.number.isRequired, 
+        size: PropTypes.string.isRequired, 
+        title: PropTypes.string.isRequired, 
+        _id: PropTypes.string.isRequired, 
+        total: PropTypes.number.isRequired, 
+        price: PropTypes.number.isRequired
+      }))
+    }
+  ).isRequired
 };
 
 export default OrdersItem;

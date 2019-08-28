@@ -1,7 +1,7 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Logo from '../../logo/Logo';
 import './LogoBlock.scss';
-import { FormattedMessage } from 'react-intl';
 
 const FooterLogo = () => {
   return (
