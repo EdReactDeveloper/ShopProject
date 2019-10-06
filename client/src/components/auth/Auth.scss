@@ -16,6 +16,8 @@
   }
 
   &__label {
+    display: flex;
+    flex-direction: column;
     font-size: 1.8rem;
     color: #666;
   }

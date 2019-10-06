@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import CardBlock from './cardBlock';
+import CardBlock from './CardBlock';
 import { findProductById } from '../../store/actions/products';
 import { getCart } from '../../store/actions/cart';
 import Loader from '../ui/loader';

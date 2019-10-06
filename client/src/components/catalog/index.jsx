@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getProducts } from '../../store/actions/products';
 import Card from '../ui/product/card/index';
-import './Catalog.scss';
 import Loader from '../ui/loader';
+import './Catalog.scss';
 
 const Catalog = ({ getProducts, products: { products, loading } }) => {
   useEffect(
