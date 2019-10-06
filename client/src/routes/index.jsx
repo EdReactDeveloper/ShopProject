@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Navigation from '../components/navigation/index';
 import Home from '../components/home';
 import ProductPage from '../components/productPage';
@@ -10,10 +12,8 @@ import AuthRoute from './AuthRoute';
 import Profile from '../components/profile';
 import Cart from '../components/profile/cart';
 import Orders from '../components/profile/orders';
-import { connect } from 'react-redux';
 import Alert from '../components/alert';
 import Catalog from '../components/catalog';
-import PropTypes from 'prop-types';
 
 const Routes = ({ loading }) => {
   return (

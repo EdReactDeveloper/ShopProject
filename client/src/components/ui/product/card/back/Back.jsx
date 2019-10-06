@@ -10,7 +10,7 @@ const Cardback = ({ item }) => {
   const sizes = item.sizes.map((item) => (
     <div style={{ color: item ? 'orange' : '' }} className="card-back-size-wrapper" key={item}>
       <span className="card-back-size-label">{item}</span>
-      <span>-</span>
+      <span className="card-back-size-dash">-</span>
     </div>
   ));
 
